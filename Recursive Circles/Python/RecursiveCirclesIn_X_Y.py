@@ -9,7 +9,7 @@ def DrawCirclePattern(x, y, radius):
         DrawCirclePattern(x, y + radius, radius/2)
         DrawCirclePattern(x, y - radius, radius/2)
 
-speed(10)
+tracer(0,0)
 DrawCirclePattern(0,0, 200)
 
 
