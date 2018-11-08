@@ -7,27 +7,73 @@ root.title("Cube Snake Control")
 container_Frame = ttk.Frame(root, padding = 5)
 
 # define out control variables
-XPos = IntVar()
-YPos = IntVar()
-ZPos = IntVar()
+XPos = IntVar(0)
+YPos = IntVar(0)
+ZPos = IntVar(0)
+
+X = 0
+Y = 0
+Z = 0
 
 # define our button traps
 def UpButtonPress(*args):
-	messagebox.showinfo("Title", "UpButtonPress")
+	global Z,X,Y
+	if (Z == 0 and Y < 3):
+		Y += 1
+	elif (Y == 3 and Z < 3):
+		Z += 1
+	elif (Z == 3 and Y > 0):
+		Y -= 1
+	elif (Y == 0 and Z > 0):
+		Z -= 1
+	SetDisplayVaribles()
 	container_Frame.focus_set()
 
 def DownButtonPress(*args):
-	messagebox.showinfo("Title", "DownButtonPress")
+	global Z,X,Y
+	if (Y == 0 and Z < 3):
+		Z += 1
+	elif (Z == 3 and Y < 3):
+		Y += 1
+	elif (Y == 3 and Z > 0):
+		Z -= 1
+	elif (Z == 0 and Y > 0):
+		Y -= 1
+	SetDisplayVaribles()
 	container_Frame.focus_set()
 
 def LeftButtonPress(*args):
-	messagebox.showinfo("Title", "LeftButtonPress")
+	global Z,X,Y
+	if (X == 0 and Z < 3):
+		Z += 1
+	elif (Z == 3 and X < 3):
+		X += 1
+	elif (X == 3 and Z > 0):
+		Z -= 1
+	elif (Z == 0 and X > 0):
+		X -= 1
+	SetDisplayVaribles()
 	container_Frame.focus_set()
 
 def RightButtonPress(*args):
-	messagebox.showinfo("Title", "RightButtonPress")
+	global Z,X,Y
+	if (Z == 0 and X < 3):
+		X += 1
+	elif (X == 3 and Z < 3):
+		Z += 1
+	elif (Z == 3 and X > 0):
+		X -= 1
+	elif (X == 0 and Z > 0):
+		Z -= 1
+	SetDisplayVaribles()
 	container_Frame.focus_set()
 
+def SetDisplayVaribles():
+	XPos.set(X)
+	YPos.set(Y)
+	ZPos.set(Z)
+
+	
 # Create our controls
 XPos_Name_Lable = ttk.Label(container_Frame, text = "X Position", width = 10, anchor = "center")
 YPos_Name_Lable = ttk.Label(container_Frame, text = "Y Position", width = 10, anchor = "center")
