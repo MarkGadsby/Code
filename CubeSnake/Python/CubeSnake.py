@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
-from tkinter import messagebox
+import serial
+import time
 
 root = Tk()
 root.title("Cube Snake Control")
@@ -81,7 +82,14 @@ def SetDisplayVaribles():
 	XPos.set(X)
 	YPos.set(Y)
 	ZPos.set(Z)
+	SendToArduino()
 
+def SendToArduino():
+	arduino = serial.Serial(port)
+	print(arduino.name)         	
+	arduino.write(struct.pack('>B', (Z * 16) + (Y * 4) + Z)
+	arduino.close()
+	
 def IsVerticalAxle():
 	if ((Y == 0 or Y == 3) and
 		(Z > 0 and Z < 3) and	
