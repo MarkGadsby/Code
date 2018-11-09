@@ -11,6 +11,7 @@ XPos = IntVar(0)
 YPos = IntVar(0)
 ZPos = IntVar(0)
 
+# define global position variables
 X = 0
 Y = 0
 Z = 0
@@ -18,7 +19,9 @@ Z = 0
 # define our button traps
 def UpButtonPress(*args):
 	global Z,X,Y
-	if (Z == 0 and Y < 3):
+	if (IsHorizontalAxle()):
+		Y += 1	
+	elif (Z == 0 and Y < 3):
 		Y += 1
 	elif (Y == 3 and Z < 3):
 		Z += 1
@@ -31,7 +34,9 @@ def UpButtonPress(*args):
 
 def DownButtonPress(*args):
 	global Z,X,Y
-	if (Y == 0 and Z < 3):
+	if (IsHorizontalAxle()):
+		Y -= 1	
+	elif (Y == 0 and Z < 3):
 		Z += 1
 	elif (Z == 3 and Y < 3):
 		Y += 1
@@ -44,7 +49,9 @@ def DownButtonPress(*args):
 
 def LeftButtonPress(*args):
 	global Z,X,Y
-	if (X == 0 and Z < 3):
+	if (IsVerticalAxle()):
+		X += 1
+	elif (X == 0 and Z < 3):
 		Z += 1
 	elif (Z == 3 and X < 3):
 		X += 1
@@ -57,7 +64,9 @@ def LeftButtonPress(*args):
 
 def RightButtonPress(*args):
 	global Z,X,Y
-	if (Z == 0 and X < 3):
+	if (IsVerticalAxle()):
+		X -= 1
+	elif (Z == 0 and X < 3):
 		X += 1
 	elif (X == 3 and Z < 3):
 		Z += 1
@@ -73,7 +82,22 @@ def SetDisplayVaribles():
 	YPos.set(Y)
 	ZPos.set(Z)
 
-	
+def IsVerticalAxle():
+	if ((Y == 0 or Y == 3) and
+		(Z > 0 and Z < 3) and	
+		(X > 0 and X < 3)):
+		return True
+	else:
+		return False	
+
+def IsHorizontalAxle():
+	if ((X == 0 or X == 3) and
+		(Z > 0 and Z < 3) and	
+		(Y > 0 and Y < 3)):
+		return True
+	else:
+		return False	
+
 # Create our controls
 XPos_Name_Lable = ttk.Label(container_Frame, text = "X Position", width = 10, anchor = "center")
 YPos_Name_Lable = ttk.Label(container_Frame, text = "Y Position", width = 10, anchor = "center")
