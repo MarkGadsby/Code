@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import serial
-import time
+import struct
 
 root = Tk()
 root.title("Cube Snake Control")
@@ -13,9 +13,10 @@ YPos = IntVar(0)
 ZPos = IntVar(0)
 
 # define global position variables
-X = 0
-Y = 0
-Z = 0
+X = 3
+Y = 3
+Z = 3
+arduino = serial.Serial('/dev/ttyACM0')
 
 # define our button traps
 def UpButtonPress(*args):
@@ -85,10 +86,11 @@ def SetDisplayVaribles():
 	SendToArduino()
 
 def SendToArduino():
-	arduino = serial.Serial(port)
-	print(arduino.name)         	
-	arduino.write(struct.pack('>B', (Z * 16) + (Y * 4) + Z)
-	arduino.close()
+        global arduino
+        print(arduino.name)
+        valueToSend = ((Z * 16) + (Y * 4) + X)
+        print(valueToSend)
+        arduino.write(chr(valueToSend).encode())
 	
 def IsVerticalAxle():
 	if ((Y == 0 or Y == 3) and
@@ -145,3 +147,5 @@ container_Frame.focus_set()
 
 # Tell Tk to enter its event loop, which is needed to make everything run.
 root.mainloop()
+arduino.close()
+
