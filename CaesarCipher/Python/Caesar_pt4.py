@@ -1,8 +1,7 @@
-# Import module support
 import CodebreakingToolbox
 
-read_book = "../../Code_Block_Projects/TextFiles/HarryPotter.txt"
-write_book = "../../Code_Block_Projects/TextFiles/Encrypted.txt"
+read_book = "The Adventure of the Dancing Men.txt"
+write_book = "Encrypted.txt"
 
 read_file = open(read_book)
 read_data = read_file.read()
