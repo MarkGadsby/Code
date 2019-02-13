@@ -7,7 +7,7 @@ root = Tk()
 root.title("Cube Snake Control")
 container_Frame = ttk.Frame(root, padding = 5)
 
-# define out control variables
+# define our control variables
 XPos = IntVar(0)
 YPos = IntVar(0)
 ZPos = IntVar(0)
