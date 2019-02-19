@@ -18,64 +18,32 @@ Y = 3
 Z = 3
 arduino = serial.Serial('/dev/ttyACM0')
 
-# define our button traps
-def UpButtonPress(*args):
-	global Z,X,Y
-	if (IsHorizontalAxle()):
-		Y += 1	
-	elif (Z == 0 and Y < 3):
-		Y += 1
-	elif (Y == 3 and Z < 3):
-		Z += 1
-	elif (Z == 3 and Y > 0):
-		Y -= 1
-	elif (Y == 0 and Z > 0):
-		Z -= 1
+# define our keyboard arrow key traps
+def KeyPress(*args):
 	SetDisplayVaribles()
 	container_Frame.focus_set()
 
-def DownButtonPress(*args):
-	global Z,X,Y
-	if (IsHorizontalAxle()):
-		Y -= 1	
-	elif (Y == 0 and Z < 3):
-		Z += 1
-	elif (Z == 3 and Y < 3):
-		Y += 1
-	elif (Y == 3 and Z > 0):
-		Z -= 1
-	elif (Z == 0 and Y > 0):
-		Y -= 1
+def UpKeyPress(*args):
+	global Y
+	Y += 1	
 	SetDisplayVaribles()
 	container_Frame.focus_set()
 
-def LeftButtonPress(*args):
-	global Z,X,Y
-	if (IsVerticalAxle()):
-		X += 1
-	elif (X == 0 and Z < 3):
-		Z += 1
-	elif (Z == 3 and X < 3):
-		X += 1
-	elif (X == 3 and Z > 0):
-		Z -= 1
-	elif (Z == 0 and X > 0):
-		X -= 1
+def DownKeyPress(*args):
+	global Y
+	Y -= 1	
 	SetDisplayVaribles()
 	container_Frame.focus_set()
 
-def RightButtonPress(*args):
-	global Z,X,Y
-	if (IsVerticalAxle()):
-		X -= 1
-	elif (Z == 0 and X < 3):
-		X += 1
-	elif (X == 3 and Z < 3):
-		Z += 1
-	elif (Z == 3 and X > 0):
-		X -= 1
-	elif (X == 0 and Z > 0):
-		Z -= 1
+def LeftKeyPress(*args):
+	global X
+	X += 1
+	SetDisplayVaribles()
+	container_Frame.focus_set()
+
+def RightKeyPress(*args):
+	global X
+	X -= 1
 	SetDisplayVaribles()
 	container_Frame.focus_set()
 
@@ -88,25 +56,8 @@ def SetDisplayVaribles():
 def SendToArduino():
         global arduino
         print(arduino.name)
-        valueToSend = ((Z * 16) + (Y * 4) + X)
-        print(valueToSend)
+        valueToSend = ((Z * 16) + (Y * 4) + X)        print(valueToSend)
         arduino.write(chr(valueToSend).encode())
-	
-def IsVerticalAxle():
-	if ((Y == 0 or Y == 3) and
-		(Z > 0 and Z < 3) and	
-		(X > 0 and X < 3)):
-		return True
-	else:
-		return False	
-
-def IsHorizontalAxle():
-	if ((X == 0 or X == 3) and
-		(Z > 0 and Z < 3) and	
-		(Y > 0 and Y < 3)):
-		return True
-	else:
-		return False	
 
 # Create our controls
 XPos_Name_Lable = ttk.Label(container_Frame, text = "X Position", width = 10, anchor = "center")
@@ -139,10 +90,11 @@ DownButton.grid(column = 1, row = 3, pady = 5, padx = 5)
 RightButton.grid(column = 2, row = 2, rowspan = 2, pady = 5, padx = 5)
 
 # bind in the key presses
-container_Frame.bind('<Up>', UpButtonPress)
-container_Frame.bind('<Down>', DownButtonPress)
-container_Frame.bind('<Left>', LeftButtonPress)
-container_Frame.bind('<Right>', RightButtonPress)
+container_Frame.bind('<Up>', UpKeyPress)
+container_Frame.bind('<Down>', DownKeyPress)
+container_Frame.bind('<Left>', LeftKeyPress)
+container_Frame.bind('<Right>', RightKeyPress)
+container_Frame.bind('<Key>', KeyPress)
 container_Frame.focus_set()
 
 # Tell Tk to enter its event loop, which is needed to make everything run.
