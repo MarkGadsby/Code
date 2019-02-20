@@ -8,6 +8,7 @@ turt.speed(2)               # make it move faster
 turt.pencolor("blue")
 turt.pensize(4)
 
+i = 9
 # define a function that draws one square
 def draw_square() : 
     for side in range(4) :
