@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1555775295 source:/home/mark/Documents/Code/FrogsAndToads/main.cpp
+	<iostream>
+	"GameStateNode.h"
+
+1555775612 /home/mark/Documents/Code/FrogsAndToads/GameStateNode.h
+
