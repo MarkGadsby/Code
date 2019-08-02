@@ -5,7 +5,7 @@ screen.setup(500,500)       # 500 x 500 window
 
 turt = turtle.Turtle()      # create a new turtle
 turt.speed(2)               # make it move faster
-turt.pencolor("blue")
+turt.pencolor("MediumSlateBlue")
 turt.pensize(4)
 
 i = 9
