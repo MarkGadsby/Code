@@ -48,18 +48,24 @@ def switch(x, y):
     else:
         walls = True
 
+def k1():
+    square.color("plum","Sienna")
+    
+
 square.onclick(switch)
+screen.onkey(k1, "Up")
+screen.listen()
 
 # Ball
 ball = Turtle()
 ball.penup()
 ball.shape("circle")
 ball.color("navy")
-ball.shapesize(1)
-ball_radius = 10              # Save the new radius for later
+ball.shapesize(1.5)
+ball_radius = 15              # Save the new radius for later
 
-ball_move_horiz = 8           # Horizontal movement per frame
-ball_move_vert  = 10          # Vertical movement per frame
+ball_move_horiz = 6           # Horizontal movement per frame
+ball_move_vert  = 7.5          # Vertical movement per frame
 
 
 def update_ball_position():
@@ -80,13 +86,17 @@ def update_ball_position():
 def update_ball_position_square():
     global ball_move_vert, ball_move_horiz, square
 
-    if ball.ycor() + ball_radius + 0 >= square.ycor() + square_half_width:
+    if ball.ycor() + ball_radius >= square.ycor() + square_half_width:
+        ball.sety((square.ycor() + square_half_width) - ball_radius)
         ball_move_vert *= -1
-    elif ball.xcor() + ball_radius + 0 >= square.xcor() + square_half_width:
+    elif ball.xcor() + ball_radius >= square.xcor() + square_half_width:
+        ball.setx(square.xcor() + square_half_width - ball_radius)
         ball_move_horiz *= -1
-    if ball.ycor() - ball_radius - 0 <= square.ycor() - square_half_width:
+    if ball.ycor() - ball_radius <= square.ycor() - square_half_width:
+        ball.sety((square.ycor() - square_half_width) + ball_radius)
         ball_move_vert *= -1
-    elif ball.xcor() - ball_radius - 0 <= square.xcor() - square_half_width:
+    elif ball.xcor() - ball_radius <= square.xcor() - square_half_width:
+        ball.setx(square.xcor() - square_half_width + ball_radius)
         ball_move_horiz *= -1
                 
     ball.setx(ball.xcor() + ball_move_horiz)
@@ -117,7 +127,7 @@ def frame ():
         update_ball_position()
         square.color("plum","plum")
     
-#    update_square_position()
+    update_square_position()
     screen.update()                      # show the new frame
     screen.ontimer(frame, framerate_ms)  # schedule this function to be called again a bit later
 
