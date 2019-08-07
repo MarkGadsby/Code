@@ -33,28 +33,24 @@ area.end_fill()
 square = Turtle()
 square.penup()
 square.shape("square")
-square.color("Sienna","plum")
-square.shapesize(5,5,2)
-square_half_width = 10 * 5; 
+square.color("Indigo","plum")
+square.shapesize(5,5,4)
+square_half_width = 10 * 5
 square_move_horiz = 2           # Horizontal movement per frame
 square_move_vert  = 3           # Vertical movement per frame
 
+moveing = False 
 walls = True
+ballIsFree = False
 
-def switch(x, y):
-    global walls
-    if (walls):
-        walls = False
+def move(x, y):
+    global moveing
+    if (moveing):
+        moveing = False
     else:
-        walls = True
+        moveing = True
 
-def k1():
-    square.color("plum","Sienna")
-    
-
-square.onclick(switch)
-screen.onkey(k1, "Up")
-screen.listen()
+square.onclick(move)
 
 # Ball
 ball = Turtle()
@@ -104,30 +100,48 @@ def update_ball_position_square():
 
 
 def update_square_position():
-    global square_move_vert, square_move_horiz
-
+    global square_move_vert, square_move_horiz, walls
+    
     if square.ycor() + square_half_width + border >= play_top:
         square_move_vert *= -1
-    elif square.xcor() + square_half_width + border  >= play_right:
+    elif square.xcor() + square_half_width + border >= play_right:
+        walls = False
         square_move_horiz *= -1
-    if square.ycor() - square_half_width - border  <= play_bottom:
+    if square.ycor() - square_half_width - border <= play_bottom:
         square_move_vert *= -1
-    elif square.xcor() - square_half_width - border  <= play_left:
+    elif square.xcor() - square_half_width - border <= play_left:
+        walls = False
         square_move_horiz *= -1
                 
     square.setx(square.xcor() + square_move_horiz)
     square.sety(square.ycor() + square_move_vert)
 
-def frame ():
-    global walls
-    if (walls):
-        update_ball_position_square()
-        square.color("Sienna","plum")
+def IsBallInSquare():
+    global ballIsFree
+    if ((ball.ycor() + ball_radius < square.ycor() + square_half_width) and
+        (ball.ycor() - ball_radius > square.ycor() - square_half_width) and
+        (ball.xcor() + ball_radius < square.xcor() + square_half_width) and
+        (ball.xcor() - ball_radius > square.xcor() - square_half_width)):
+            return True        
     else:
-        update_ball_position()
-        square.color("plum","plum")
-    
-    update_square_position()
+        ballIsFree = True
+        return False        
+        
+def frame ():
+    global walls, moveing, ballIsFree
+    if (walls == False and IsBallInSquare() and ballIsFree):
+        ballIsFree = False
+        walls = True
+
+    if (moveing):    
+        if (walls):
+            update_ball_position_square()
+            square.color("Indigo","plum")
+        else:
+            update_ball_position()
+            square.color("plum","plum")    
+        update_square_position()
+
     screen.update()                      # show the new frame
     screen.ontimer(frame, framerate_ms)  # schedule this function to be called again a bit later
 
