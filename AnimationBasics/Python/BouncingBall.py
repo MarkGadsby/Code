@@ -43,7 +43,7 @@ moveing = False
 walls = True
 ballIsFree = False
 
-def move(x, y):
+def move(x,y):
     global moveing
     if (moveing):
         moveing = False
