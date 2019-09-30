@@ -1,4 +1,4 @@
-read_book = "../../Code_Block_Projects/TextFiles/HarryPotter.txt"
+read_book = "The Adventure of the Dancing Men.txt"
 
 read_file = open(read_book)
 read_data = read_file.read()
@@ -15,7 +15,7 @@ for letter in read_data:
 print("Charactor frequency analysis:\n")
 
 for i in range(len(alphabit_countList)):
-  print(chr(i + 97), "=", alphabit_countList[i])
+    print(chr(i + 97), "=", alphabit_countList[i])
       
 indexOfMax = alphabit_countList.index(max(alphabit_countList))
 
