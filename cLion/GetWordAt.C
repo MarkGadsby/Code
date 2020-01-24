@@ -1,22 +1,37 @@
+////////////////////////////////////////////////////////
+// Program to demonstrate an implementation of the 'remove'
+// function mentioned in Q3 of the Christmas Tracking Test.
+// It returns the first word in an array.
+////////////////////////////////////////////////////////
 #include <stdio.h>
 
-int GetWordAt(int iStart, char base[], char target[64])
+////////////////////////////////////////////////////////
+// GetWordAt()
+//
+// Function to copy letters from the sentence parameter to
+// the word parameter. The iStart parameter indicates where
+// in the sentence to start reading. Reading will stop when
+// a space or null terminator is encountered.
+//
+// Returns the length of the word read, or -1 if the last
+// word has just been read.
+////////////////////////////////////////////////////////
+int GetWordAt(int iStart, char sentence[], char word[])
 {
-    int baseIndex = iStart;
-
+    int index = iStart;
     int retVal = 0;
 
-    while (base[baseIndex] != ' ' &&
-           base[baseIndex] != '\0')
+    while (sentence[index] != ' ' &&
+           sentence[index] != '\0')
     {
-        target[retVal] = base[baseIndex];
+        word[retVal] = sentence[index];
         retVal++;
-        baseIndex++;
+        index++;
     }
 
-    target[retVal] = '\0';
+    word[retVal] = '\0';
 
-    if (base[baseIndex] == '\0')
+    if (sentence[index] == '\0')
         retVal = -1;
 
     return retVal;
@@ -24,17 +39,19 @@ int GetWordAt(int iStart, char base[], char target[64])
 
 int main()
 {
+    // initialise words array
     char words[] = "REMEMBER TO TAKE CHARLIE TO THE DENTIST";
+    // allocate space for the individual words.
     char word[64];
 
-    int i = 0;
+    int wordSize = 0;
     int counter = 0;
 
-    while (i != -1)
+    while (wordSize != -1) // while we still have words to read
     {
-        i = GetWordAt(counter, words, word);
-        counter += i;
-        counter++;
+        wordSize = GetWordAt(counter, words, word);
+        counter += wordSize;    // move counter along the correct number of letters
+        counter++;              // on to the start of the next word
 
         printf("\t%s\n\n",word);
     }
