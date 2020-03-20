@@ -1,130 +1,117 @@
-#include <vorbis/vorbisfile.h>
+///////////////////////////////////////////////////////////////////////
+// Main.C For the MusicPlayer program.
+//
+// Advanced Linux Sound Architecture (ALSA) is a software framework and 
+// part of the Linux kernel that provides an application programming 
+// interface (API) for sound card device drivers. 
+//
+// Vorbis is the Ogg Vorbis audio coding format 
+//
+// To build this file:
+// 
+// gcc -Wall Main.c -o MusicPlayer -lasound -lvorbisfile 
+//
+// This file will use the alsa lib to set up the pulse-code modulation interface 
+// (PCM) to play output and use the vorbis lib to read in a .ogg file and pass
+// it to the PCM
+///////////////////////////////////////////////////////////////////////
 #include <alsa/asoundlib.h>
+#include <vorbis/vorbisfile.h>
+#include "MusicPlayer.h"
+
+const int SAMPLE_RATE = 44100;          // frequency in Hz
 
 int main()
 {
-    // PCM handle
-    snd_pcm_t* pcmHandle;
+    snd_pcm_t* pcmHandle = NULL;        // PCM handle
+
+    OpenPCM(&pcmHandle);
+    unsigned long pcmPeriodSize = SetupPCM(pcmHandle);
     
-    // Unsigned frames quantity 
-    snd_pcm_uframes_t framesQuantity;
-
-    // Playback device
-    static char *device = "default";
-
-    int err = snd_pcm_open(&pcmHandle, device, SND_PCM_STREAM_PLAYBACK, 0);
-
-    if (err < 0) 
-    {
-        printf("Playback open error: \n");
-        return 2;
-    }
-    else
-        printf("snd_pcm_open:\t\t\tSeems OK\n");
-    
-    // Allocate parameters object and fill it with default values	
-    snd_pcm_hw_params_t* hwParams;
-    if (snd_pcm_hw_params_malloc(&hwParams) == 0)
-        printf("snd_pcm_hw_params_malloc:\tSeems OK\n");
-
-    if (snd_pcm_hw_params_any(pcmHandle, hwParams) >= 0)
-        printf("snd_pcm_hw_params_any:\t\tSeems OK\n");
-
-	if (snd_pcm_hw_params_set_access(pcmHandle, hwParams, SND_PCM_ACCESS_RW_INTERLEAVED) >= 0) 
-        printf("snd_pcm_hw_params_set_access:\tSeems OK\n");
-
-	if (snd_pcm_hw_params_set_format(pcmHandle, hwParams, SND_PCM_FORMAT_S16_LE) >= 0)
-        printf("snd_pcm_hw_params_set_format:\tSeems OK\n");
-
-	if (snd_pcm_hw_params_set_channels(pcmHandle, hwParams, 2) >= 0)
-        printf("snd_pcm_hw_params_set_channels:\tSeems OK\n");
-
-    int rate = 44100;
-
-	if (snd_pcm_hw_params_set_rate_near(pcmHandle, hwParams, &rate, 0) >= 0) 
-        printf("snd_pcm_hw_params_set_rate_near:Seems OK\n");
-
-	if (snd_pcm_hw_params(pcmHandle, hwParams) >= 0)
-        printf("snd_pcm_hw_params:\t\tSeems OK\n");
-
-	printf("PCM name:\t\t\t'%s'\n", snd_pcm_name(pcmHandle));
-
-	printf("PCM state:\t\t\t%s\n", snd_pcm_state_name(snd_pcm_state(pcmHandle)));
-
-    int tmp = 0;
-
-	snd_pcm_hw_params_get_channels(hwParams, &tmp);
-	printf("channels:\t\t\t%i ", tmp);
-
-	if (tmp == 1)
-		printf("(mono)\n");
-	else if (tmp == 2)
-		printf("(stereo)\n");
-
-	snd_pcm_hw_params_get_rate(hwParams, &tmp, 0);
-	printf("rate:\t\t\t\t%d bps\n", tmp);
-
-	printf("seconds:\t\t\t%d\n", 5);	
-
-    // Allocate buffer to hold single period
-    snd_pcm_hw_params_get_period_size(hwParams, &framesQuantity, 0);
-
-	printf("frames:\t\t\t\t%lu\n", framesQuantity);	
-
-    int bufferSize = framesQuantity * 2 * 2;
+    // Allocate buffer to hold a single PCM period
+    // bufferSize = PCM period * 2 channels * 2 byte format
+    int bufferSize = pcmPeriodSize * 2 * 2;
     char* buffer = (char*) malloc(bufferSize);
 
     OggVorbis_File vf;
-    int eof = 0;
-    int current_section;
 
-    if (ov_fopen("TrashShort.ogg", &vf) == 0)
-        printf("ov_fopen:\t\t\tSeems OK\n");
+    if (ov_fopen("TrashShort.ogg", &vf) < 0)
+        printf("ov_fopen error\n");
 
-    vorbis_info *vi = ov_info(&vf, -1);
-    printf("\nBitstream\n");
-    printf("channels:\t\t\t%i\n", vi->channels);
-	printf("rate:\t\t\t\t%ld Hz\n", vi->rate);
+    int current_section = 0;
+    long bytesRead = 0;
 
-    printf("Encoded by:\t\t\t%s\n\n", ov_comment(&vf, -1)->vendor);
-    //    snd_pcm_set_params(pcmHandle,SND_PCM_ACCESS_RW_INTERLEAVED, SND_PCM_FORMAT_S16_LE, 2, 44100,  
-
-    while(!eof)
+    do  // pass a buffer of data from the file to the PCM 
     {
-        long ret = ov_read(&vf, buffer, bufferSize, 0, 2, 1, &current_section);
+        bytesRead = ov_read(&vf, buffer, bufferSize, 0, 2, 1, &current_section);
 
-        if(ret == 0)
-        {
-            printf("end of file\n");
-            eof = 1;
-        }
-        else if(ret < 0)
-        {
-            printf("error in the stream%ld\n", ret );
-        }
-        else
-        {
-            snd_pcm_sframes_t frames = snd_pcm_writei(pcmHandle, buffer, ret / 4/*framesQuantity*/);
-    
-            if (frames < 0)
-            {
-                printf("snd_pcm_writen failed: %s\n", snd_strerror(frames));
-            
-                if (frames == -EPIPE)
-                {
-                    snd_pcm_prepare(pcmHandle);
-                }
-                else
-                {       
-                    break;
-                }
-            }
-        }
+        // bytesRead will four times as large as snd_pcm_writei is expecting 
+        // (2 channels, 2 byte data format)  
+        if (snd_pcm_writei(pcmHandle, buffer, bytesRead / 4) < 0) 
+            break;
     }
-    ov_clear(&vf);
-    free(buffer);
-    snd_pcm_drain(pcmHandle);
-    snd_pcm_close(pcmHandle);
+    while(bytesRead);
+
+    ov_clear(&vf);              // clear the decoder's buffers
+    free(buffer);               // free the buffer memory
+    snd_pcm_drain(pcmHandle);   // stop a PCM preserving pending frames
+    snd_pcm_close(pcmHandle);   // close PCM handle 
+    
     return 1;
 }
 
+void OpenPCM(snd_pcm_t** ppcmHandle)
+{
+    // Playback device
+    static char *device = "default";
+    
+    // Opens a PCM
+    if (snd_pcm_open(ppcmHandle, device, SND_PCM_STREAM_PLAYBACK, 0) < 0)
+        printf("snd_pcm_open error\n");
+}
+
+unsigned long SetupPCM(snd_pcm_t* pcmHandle)
+{
+    snd_pcm_hw_params_t* hwParams;
+
+    // Allocate an invalid snd_pcm_hw_params_t using standard malloc 
+    if (snd_pcm_hw_params_malloc(&hwParams) < 0)
+        printf("snd_pcm_hw_params_malloc error\n");
+
+    // The configuration space will be filled with all possible ranges for the PCM device
+    if (snd_pcm_hw_params_any(pcmHandle, hwParams) < 0)
+        printf("snd_pcm_hw_params_any error\n");
+
+    // Restrict a configuration space to contain only the interleaved access type 
+	if (snd_pcm_hw_params_set_access(pcmHandle, hwParams, SND_PCM_ACCESS_RW_INTERLEAVED) < 0) 
+        printf("snd_pcm_hw_params_set_access error\n");
+
+    // Restrict a configuration space to contain only signed 16 bit little endian format 
+	if (snd_pcm_hw_params_set_format(pcmHandle, hwParams, SND_PCM_FORMAT_S16_LE) < 0)
+        printf("snd_pcm_hw_params_set_format error\n");
+
+    // Restrict a configuration space to contain two channels, stereo 
+	if (snd_pcm_hw_params_set_channels(pcmHandle, hwParams, 2) < 0)
+        printf("snd_pcm_hw_params_set_channels error\n");
+
+    // Restrict a configuration space to have a sample rate nearest to a 44100hZ 
+    unsigned int rate = SAMPLE_RATE;
+	if (snd_pcm_hw_params_set_rate_near(pcmHandle, hwParams, &rate, 0) < 0) 
+        printf("snd_pcm_hw_params_set_rate_near error\n");
+
+    // Install one PCM hardware configuration chosen from a configuration space
+	if (snd_pcm_hw_params(pcmHandle, hwParams) < 0)
+        printf("snd_pcm_hw_params error\n");
+
+    // Extract period size from a configuration space
+    unsigned long periodSize;
+    if (snd_pcm_hw_params_get_period_size(hwParams, &periodSize, 0) < 0)
+        printf("snd_pcm_hw_params_get_period_size error\n");
+
+    // Prepare PCM for use 
+    if (snd_pcm_prepare(pcmHandle) < 0)
+        printf("snd_pcm_prepar error\n");
+
+	printf("PCM state:\t%s\n", snd_pcm_state_name(snd_pcm_state(pcmHandle)));
+    return periodSize;
+} 
