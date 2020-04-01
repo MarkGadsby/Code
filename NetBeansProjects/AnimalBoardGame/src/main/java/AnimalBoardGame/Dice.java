@@ -1,39 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package AnimalBoardGame;
 
 import java.util.Random;
 
-
+/**
+ *
+ * @author M.Gadsby
+ */
 public class Dice 
 {
-    private Random  rand;
-    private int     firstRoll;
-    private int     secondRoll;
+    private int firstThrow;
+    private int secondThrow;
+    private Random rand;
     
     public Dice()
-    {   
+    {
         rand = new Random();
-        firstRoll = -1;
-        secondRoll = -1;
+        firstThrow = -1;
+        secondThrow = -1;
     }
 
-    public int GetPairOfDiceRoll()
+    public int doubleRoll()
     {
-        firstRoll = GetSingleDiceRoll();
-        secondRoll = GetSingleDiceRoll();
-        
-        return firstRoll + secondRoll;     
+        firstThrow = SingleRoll();
+        secondThrow = SingleRoll();
+
+        return firstThrow + secondThrow;
     }
     
     public boolean ThrewDouble()
     {
-        if (firstRoll != -1 && secondRoll != -1)
+        if (firstThrow != -1 &&
+            secondThrow != -1)
         {
-            return firstRoll == secondRoll;
+            return firstThrow == secondThrow;
         }
-        else return false;                    
+        else
+            return false;        
     }
-
-    private int GetSingleDiceRoll()
+    
+    private int SingleRoll()
     {
         return rand.nextInt(6) + 1;
     }

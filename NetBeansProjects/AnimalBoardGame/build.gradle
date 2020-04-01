@@ -3,7 +3,7 @@ apply plugin: 'jacoco'
 apply plugin: 'application'
 
 
-mainClassName = 'AnimalBoardGame.Main'
+mainClassName = 'AnimalBoardGame.AnimalBoardGame'
 
 repositories {
     jcenter()
