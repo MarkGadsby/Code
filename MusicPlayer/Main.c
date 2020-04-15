@@ -20,70 +20,61 @@
 #include <linux/limits.h>
 #include <dirent.h>
 #include "MusicPlayer.h"
+#include <stdbool.h>
 
 const int SAMPLE_RATE = 44100;          // frequency in Hz
 
-int main()
+int main(int argc, char *argv[])
 {
-    DIR*            dir;
-    struct dirent*  ent;
-    char trackArray[30][NAME_MAX];
-    memset(trackArray, 0, 30 * NAME_MAX);
-    
-    if (dir = opendir ("/home/mark/Music/Rival Consoles/Persona"))
+    if (argc != 2)
     {
-        int rowIndex = 0;
-        while (ent = readdir(dir)) 
-        {
-            if (strstr(ent->d_name, ".ogg"))   
-                strcpy(&trackArray[rowIndex++][0],ent->d_name);
-        }
-        closedir(dir);
-    } 
+        printf("\nUseage: ./MusicPlayer \"/home/mark/Music/BandName/Album Name\"\n\n");
+        return 0;
+    }
 
-    chdir("/home/mark/Music/Rival Consoles/Persona");
+    struct TrackInfo trackArray[30]; // Allocate track info
+    memset(trackArray, 0, 30 * sizeof(struct TrackInfo));
 
+    int ArrayTotal = 0;
+    FillTrackFile(trackArray, argv[1], &ArrayTotal);
+    FillVorbisInfo(trackArray, argv[1], ArrayTotal);
+    BubbleSortTracks(trackArray, ArrayTotal);
 
-    int i = 0;
+    snd_pcm_t* pcmHandle = NULL;        // PCM handle
 
-    while (trackArray[i][0])
+    OpenPCM(&pcmHandle);
+
+    unsigned long pcmPeriodSize = SetupPCM(pcmHandle);
+
+    for (int i = 0; i < ArrayTotal; i++)
     {
-        printf("%d\t-\t%s\n", i, &trackArray[i][0]);
-    
-        snd_pcm_t* pcmHandle = NULL;        // PCM handle
+        printf("Now playing: %s by %s\n", trackArray[i].Title, trackArray[i].Artist);
 
-        OpenPCM(&pcmHandle);
-        unsigned long pcmPeriodSize = SetupPCM(pcmHandle);
-        
         // Allocate buffer to hold a single PCM period
         // bufferSize = PCM period * 2 channels * 2 byte format
         int bufferSize = pcmPeriodSize * 2 * 2;
         char* buffer = (char*) malloc(bufferSize);
-
-        OggVorbis_File vf;
-
-        if (ov_fopen(&trackArray[i++][0], &vf) < 0)
-            printf("ov_fopen error\n");
 
         int current_section = 0;
         long bytesRead = 0;
 
         do  // pass a buffer of data from the file to the PCM 
         {
-            bytesRead = ov_read(&vf, buffer, bufferSize, 0, 2, 1, &current_section);
+            bytesRead = ov_read(&trackArray[i].VorbisFile, buffer, bufferSize, 0, 2, 1, &current_section);
 
             // bytesRead will four times as large as snd_pcm_writei is expecting 
             // (2 channels, 2 byte data format)  
-            if (snd_pcm_writei(pcmHandle, buffer, bytesRead / 4) < 0) 
-                break;
+            if (snd_pcm_writei(pcmHandle, buffer, bytesRead / 4) < 0)
+                snd_pcm_prepare(pcmHandle);
         }
         while(bytesRead);
 
-        ov_clear(&vf);              // clear the decoder's buffers
-        free(buffer);               // free the buffer memory
-        snd_pcm_drain(pcmHandle);   // stop a PCM preserving pending frames
-        snd_pcm_close(pcmHandle);   // close PCM handle 
+        ov_clear(&trackArray[i].VorbisFile);   // clear the decoder's buffers
+        free(buffer);                           // free the buffer memory
+        snd_pcm_drain(pcmHandle);               // stop a PCM preserving pending frames
     }
+
+    snd_pcm_close(pcmHandle);   // close PCM handle 
 
     return 1;
 }
@@ -143,3 +134,89 @@ unsigned long SetupPCM(snd_pcm_t* pcmHandle)
 	printf("PCM state:\t%s\n", snd_pcm_state_name(snd_pcm_state(pcmHandle)));
     return periodSize;
 } 
+
+void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal)
+{
+    DIR*            dir;
+    struct dirent*  ent;
+    
+    if (dir = opendir(path))
+    {
+        int index = 0;
+        while (ent = readdir(dir)) 
+        {
+            if (strstr(ent->d_name, ".ogg"))   
+                strcpy(trackArray[index++].FileName, ent->d_name);
+        }
+        closedir(dir);
+        *pArrayTotal = index; 
+    } 
+}
+
+void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total)
+{
+    char fullPath[NAME_MAX];
+    strcpy(fullPath, path);
+
+    for (int i = 0; i < total; i++)
+    {
+        strcat(fullPath, trackArray[i].FileName);
+
+        if (ov_fopen(fullPath, &trackArray[i].VorbisFile) < 0)
+            printf("ov_fopen error\n");
+
+        vorbis_comment* vc = trackArray[i].VorbisFile.vc;
+        int numberOfComments = vc->comments;
+
+        while (numberOfComments--)
+        {
+            if (strncmp("ARTIST=", vc->user_comments[numberOfComments], 7) == 0)
+                strcpy(trackArray[i].Artist, vc->user_comments[numberOfComments] + 7);
+            else if (strncmp("artist=", vc->user_comments[numberOfComments], 7) == 0)
+                strcpy(trackArray[i].Artist, vc->user_comments[numberOfComments] + 7);
+            else if (strncmp("TITLE=", vc->user_comments[numberOfComments], 6) == 0)
+                strcpy(trackArray[i].Title, vc->user_comments[numberOfComments] + 6);
+            else if (strncmp("title=", vc->user_comments[numberOfComments], 6) == 0)
+                strcpy(trackArray[i].Title, vc->user_comments[numberOfComments] + 6);
+            else if (strncmp("TRACKNUMBER=", vc->user_comments[numberOfComments], 12) == 0)
+                trackArray[i].Number = atoi(vc->user_comments[numberOfComments] + 12);
+            else if (strncmp("tracknumber=", vc->user_comments[numberOfComments], 12) == 0)
+                trackArray[i].Number = atoi(vc->user_comments[numberOfComments] + 12);
+            else if (strncmp("ALBUM=", vc->user_comments[numberOfComments], 6) == 0)
+                strcpy(trackArray[i].Album, vc->user_comments[numberOfComments] + 6);
+            else if (strncmp("album=", vc->user_comments[numberOfComments], 6) == 0)
+                strcpy(trackArray[i].Album, vc->user_comments[numberOfComments] + 6);
+        }
+
+        // Clean the filename off the path
+        char* pSlash = strrchr(fullPath,'/');
+        
+        if (pSlash)
+        {
+            pSlash++;
+            *pSlash = 0;
+        }
+    }
+}
+
+void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
+{
+    bool bSwitches = true;
+    struct TrackInfo holdingPen;
+
+    while (bSwitches)
+    {
+        bSwitches = false;
+
+        for (int i = 0; i < (total - 1); i++)
+        {
+            if (trackArray[i].Number > trackArray[i+1].Number)
+            {
+                holdingPen = trackArray[i+1];
+                trackArray[i+1] = trackArray[i];
+                trackArray[i] = holdingPen;
+                bSwitches = true;
+            } 
+        }    
+    }
+}
