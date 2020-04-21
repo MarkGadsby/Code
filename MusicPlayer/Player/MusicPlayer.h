@@ -14,3 +14,4 @@ unsigned long SetupPCM(snd_pcm_t* pcmHandle);
 void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal);
 void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
+void GetPathFromArtist(char path[PATH_MAX], char artist[NAME_MAX]);

@@ -8,8 +8,8 @@
 // Vorbis is the Ogg Vorbis audio coding format 
 //
 // To build this file:
-// 
-// gcc -Wall Main.c -o MusicPlayer -lasound -lvorbisfile 
+//
+// gcc -W Main.c -o MusicPlayer -lasound -lvorbisfile -lmysqlclient
 //
 // This file will use the alsa lib to set up the pulse-code modulation interface 
 // (PCM) to play output and use the vorbis lib to read in a .ogg file and pass
@@ -21,6 +21,7 @@
 #include <dirent.h>
 #include "MusicPlayer.h"
 #include <stdbool.h>
+#include <mysql/mysql.h>
 
 const int SAMPLE_RATE = 44100;          // frequency in Hz
 
@@ -28,16 +29,20 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        printf("\nUseage: ./MusicPlayer \"/home/mark/Music/BandName/Album Name\"\n\n");
+        printf("\nUseage: ./MusicPlayer \"Artist\"\n\n");
         return 0;
     }
+
+    char PlayPath[PATH_MAX];
+
+    GetPathFromArtist(PlayPath, argv[1]);
 
     struct TrackInfo trackArray[30]; // Allocate track info
     memset(trackArray, 0, 30 * sizeof(struct TrackInfo));
 
     int ArrayTotal = 0;
-    FillTrackFile(trackArray, argv[1], &ArrayTotal);
-    FillVorbisInfo(trackArray, argv[1], ArrayTotal);
+    FillTrackFile(trackArray, PlayPath, &ArrayTotal);
+    FillVorbisInfo(trackArray, PlayPath, ArrayTotal);
     BubbleSortTracks(trackArray, ArrayTotal);
 
     snd_pcm_t* pcmHandle = NULL;        // PCM handle
@@ -219,4 +224,45 @@ void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
             } 
         }    
     }
+}
+
+void GetPathFromArtist(char path[PATH_MAX], char* artist)
+{
+    char QueryString[PATH_MAX] = {"SELECT Path FROM Albums WHERE Artist = \""};
+
+    strcat(QueryString, artist);
+    strcat(QueryString, "\"");
+
+    MYSQL* pConnection = mysql_init(NULL);
+
+    if (!mysql_real_connect(pConnection, "localhost" , "root" , "root", "Albums", 0 , NULL, 0))
+    {
+        printf("%s\n", mysql_error(pConnection));
+        mysql_close(pConnection);
+    }
+
+    if (mysql_query(pConnection, QueryString))
+    {
+        printf("%s\n", mysql_error(pConnection));
+        mysql_close(pConnection);
+    }
+
+    MYSQL_RES* result = mysql_store_result(pConnection);
+  
+    if (!result) 
+    {
+        printf("%s\n", mysql_error(pConnection));
+        mysql_close(pConnection);
+    }
+
+    MYSQL_ROW row;
+    
+    while ((row = mysql_fetch_row(result))) 
+    { 
+        strcpy(path, *row);
+        strcat(path, "/");
+    }
+
+    mysql_free_result(result);
+    mysql_close(pConnection);
 }
