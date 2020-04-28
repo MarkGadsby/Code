@@ -10,15 +10,13 @@
 //
 // mysql > LOAD DATA LOCAL INFILE '~/Code/MusicPlayer/PathParser/parsed.txt' INTO TABLE Albums;
 //
-// To Build:
+// To Build:`
 // >g++ -Wall -o PathParser main.c
 //
 ///////////////////////////////////////////////////////////////////////////////
 #include <linux/limits.h>
 #include <stdio.h>
 #include <string.h>
-
-const int FIRST_FOLDER = 17;     //  forward slash after the base folder; "/home/mark/Music/"
 
 int main()
 {
@@ -39,9 +37,10 @@ int main()
     {
         fgets(path, PATH_MAX, paths);
 
+        char* p = strstr(path, "Music");
 
-        char* p = strstr(path, "Music")
-
+        firstFolder = p - path;
+        firstFolder += 6; // "Music/"
         secondindex = 0;
 
         char artist[NAME_MAX];
@@ -49,26 +48,26 @@ int main()
         char title[NAME_MAX];
         memset(title, 0, NAME_MAX);
 
-        char* pSecondFolder = strchr(path + FIRST_FOLDER, '/');
+        char* pSecondFolder = strchr(path + firstFolder, '/');
 
         if (pSecondFolder)
             secondindex = pSecondFolder - path;
 
         if (secondindex)
         {
-            strncpy(artist, path + FIRST_FOLDER, secondindex - FIRST_FOLDER);
+            strncpy(artist, path + firstFolder, secondindex - firstFolder);
             strcpy(title, path + secondindex + 1);
         }
         else // Put the same string in both artist and title if no second folder exists
         {
-            strcpy(artist, path + FIRST_FOLDER);
+            strcpy(artist, path + firstFolder);
 
             // lose the trailing new line from 'artist' which was copied from the original 'path'
             int len = strlen(artist);
             if (artist[len - 1] == '\n')
                 artist[len - 1] = 0;
 
-            strcpy(title, path + FIRST_FOLDER);
+            strcpy(title, path + firstFolder);
         }
 
         // the new line has been copied to the end of 'title' by now so lose it from the original 'path'
