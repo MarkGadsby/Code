@@ -32,11 +32,15 @@ int main()
     }
 
     char path[PATH_MAX];
+    int firstFolder = 0;        //  forward slash after the base folder; "/home/mark/Music/"
     int secondindex = 0;
 
     while (!feof(paths))
     {
         fgets(path, PATH_MAX, paths);
+
+
+        char* p = strstr(path, "Music")
 
         secondindex = 0;
 

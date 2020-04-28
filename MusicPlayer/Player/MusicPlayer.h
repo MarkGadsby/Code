@@ -1,3 +1,7 @@
+#include <alsa/asoundlib.h>
+#include <vorbis/vorbisfile.h>
+#include <linux/limits.h>
+
 struct TrackInfo
 {
     char FileName[NAME_MAX];
@@ -14,3 +18,4 @@ unsigned long SetupPCM(snd_pcm_t* pcmHandle);
 void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal);
 void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
+void GetPathFromTitle(char path[PATH_MAX], char artist[NAME_MAX]);

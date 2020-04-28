@@ -9,31 +9,28 @@
 //
 // To build this file:
 //
-// gcc -W Main.c -o MusicPlayer -lasound -lvorbisfile
+// gcc -W -o MusicPlayer Main.c MySQL.c PCM.c Vorbis.c -lasound -lvorbisfile -lmysqlclient
 //
 // This file will use the alsa lib to set up the pulse-code modulation interface 
 // (PCM) to play output and use the vorbis lib to read in a .ogg file and pass
 // it to the PCM
 ///////////////////////////////////////////////////////////////////////
-#include <alsa/asoundlib.h>
-#include <vorbis/vorbisfile.h>
-#include <linux/limits.h>
 #include <dirent.h>
-#include "MusicPlayer.h"
 #include <stdbool.h>
 
-const int SAMPLE_RATE = 44100;          // frequency in Hz
+#include "MusicPlayer.h"
 
 int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        printf("\nUseage: ./MusicPlayer \"/home/[user]/Music/Artist/Album/\"\n\n");
+        printf("\nUseage: ./MusicPlayer \"Title\"\n\n");
         return 0;
     }
 
     char PlayPath[PATH_MAX];
-    strcpy(PlayPath, argv[1]);
+
+    GetPathFromTitle(PlayPath, argv[1]);
 
     struct TrackInfo trackArray[30]; // Allocate track info
     memset(trackArray, 0, 30 * sizeof(struct TrackInfo));
@@ -82,62 +79,6 @@ int main(int argc, char *argv[])
     return 1;
 }
 
-void OpenPCM(snd_pcm_t** ppcmHandle)
-{
-    // Playback device
-    static char *device = "default";
-    
-    // Opens a PCM
-    if (snd_pcm_open(ppcmHandle, device, SND_PCM_STREAM_PLAYBACK, 0) < 0)
-        printf("snd_pcm_open error\n");
-}
-
-unsigned long SetupPCM(snd_pcm_t* pcmHandle)
-{
-    snd_pcm_hw_params_t* hwParams;
-
-    // Allocate an invalid snd_pcm_hw_params_t using standard malloc 
-    if (snd_pcm_hw_params_malloc(&hwParams) < 0)
-        printf("snd_pcm_hw_params_malloc error\n");
-
-    // The configuration space will be filled with all possible ranges for the PCM device
-    if (snd_pcm_hw_params_any(pcmHandle, hwParams) < 0)
-        printf("snd_pcm_hw_params_any error\n");
-
-    // Restrict a configuration space to contain only the interleaved access type 
-	if (snd_pcm_hw_params_set_access(pcmHandle, hwParams, SND_PCM_ACCESS_RW_INTERLEAVED) < 0) 
-        printf("snd_pcm_hw_params_set_access error\n");
-
-    // Restrict a configuration space to contain only signed 16 bit little endian format 
-	if (snd_pcm_hw_params_set_format(pcmHandle, hwParams, SND_PCM_FORMAT_S16_LE) < 0)
-        printf("snd_pcm_hw_params_set_format error\n");
-
-    // Restrict a configuration space to contain two channels, stereo 
-	if (snd_pcm_hw_params_set_channels(pcmHandle, hwParams, 2) < 0)
-        printf("snd_pcm_hw_params_set_channels error\n");
-
-    // Restrict a configuration space to have a sample rate nearest to a 44100hZ 
-    unsigned int rate = SAMPLE_RATE;
-	if (snd_pcm_hw_params_set_rate_near(pcmHandle, hwParams, &rate, 0) < 0) 
-        printf("snd_pcm_hw_params_set_rate_near error\n");
-
-    // Install one PCM hardware configuration chosen from a configuration space
-	if (snd_pcm_hw_params(pcmHandle, hwParams) < 0)
-        printf("snd_pcm_hw_params error\n");
-
-    // Extract period size from a configuration space
-    unsigned long periodSize;
-    if (snd_pcm_hw_params_get_period_size(hwParams, &periodSize, 0) < 0)
-        printf("snd_pcm_hw_params_get_period_size error\n");
-
-    // Prepare PCM for use 
-    if (snd_pcm_prepare(pcmHandle) < 0)
-        printf("snd_pcm_prepar error\n");
-
-	printf("PCM state:\t%s\n", snd_pcm_state_name(snd_pcm_state(pcmHandle)));
-    return periodSize;
-} 
-
 void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal)
 {
     DIR*            dir;
@@ -154,52 +95,6 @@ void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal
         closedir(dir);
         *pArrayTotal = index; 
     } 
-}
-
-void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total)
-{
-    char fullPath[NAME_MAX];
-    strcpy(fullPath, path);
-
-    for (int i = 0; i < total; i++)
-    {
-        strcat(fullPath, trackArray[i].FileName);
-
-        if (ov_fopen(fullPath, &trackArray[i].VorbisFile) < 0)
-            printf("ov_fopen error\n");
-
-        vorbis_comment* vc = trackArray[i].VorbisFile.vc;
-        int numberOfComments = vc->comments;
-
-        while (numberOfComments--)
-        {
-            if (strncmp("ARTIST=", vc->user_comments[numberOfComments], 7) == 0)
-                strcpy(trackArray[i].Artist, vc->user_comments[numberOfComments] + 7);
-            else if (strncmp("artist=", vc->user_comments[numberOfComments], 7) == 0)
-                strcpy(trackArray[i].Artist, vc->user_comments[numberOfComments] + 7);
-            else if (strncmp("TITLE=", vc->user_comments[numberOfComments], 6) == 0)
-                strcpy(trackArray[i].Title, vc->user_comments[numberOfComments] + 6);
-            else if (strncmp("title=", vc->user_comments[numberOfComments], 6) == 0)
-                strcpy(trackArray[i].Title, vc->user_comments[numberOfComments] + 6);
-            else if (strncmp("TRACKNUMBER=", vc->user_comments[numberOfComments], 12) == 0)
-                trackArray[i].Number = atoi(vc->user_comments[numberOfComments] + 12);
-            else if (strncmp("tracknumber=", vc->user_comments[numberOfComments], 12) == 0)
-                trackArray[i].Number = atoi(vc->user_comments[numberOfComments] + 12);
-            else if (strncmp("ALBUM=", vc->user_comments[numberOfComments], 6) == 0)
-                strcpy(trackArray[i].Album, vc->user_comments[numberOfComments] + 6);
-            else if (strncmp("album=", vc->user_comments[numberOfComments], 6) == 0)
-                strcpy(trackArray[i].Album, vc->user_comments[numberOfComments] + 6);
-        }
-
-        // Clean the filename off the path
-        char* pSlash = strrchr(fullPath,'/');
-        
-        if (pSlash)
-        {
-            pSlash++;
-            *pSlash = 0;
-        }
-    }
 }
 
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
