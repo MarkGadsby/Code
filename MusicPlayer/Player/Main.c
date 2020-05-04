@@ -17,8 +17,9 @@
 ///////////////////////////////////////////////////////////////////////
 #include <dirent.h>
 #include <stdbool.h>
-
 #include "MusicPlayer.h"
+
+const int MAX_ALBUM_TRACKS = 64;
 
 int main(int argc, char *argv[])
 {
@@ -32,8 +33,8 @@ int main(int argc, char *argv[])
 
     GetPathFromTitle(PlayPath, argv[1]);
 
-    struct TrackInfo trackArray[30]; // Allocate track info
-    memset(trackArray, 0, 30 * sizeof(struct TrackInfo));
+    struct TrackInfo trackArray[MAX_ALBUM_TRACKS]; // Allocate track info
+    memset(trackArray, 0, MAX_ALBUM_TRACKS * sizeof(struct TrackInfo));
 
     int ArrayTotal = 0;
     FillTrackFile(trackArray, PlayPath, &ArrayTotal);
