@@ -19,3 +19,4 @@ void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal
 void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
 void GetPathFromTitle(char path[PATH_MAX], char artist[NAME_MAX]);
+void PatWatchDog(char Title[PATH_MAX]);
