@@ -25,7 +25,7 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
 
         if (pEvent->mask & IN_CLOSE_WRITE)
         {
-            FILE* pFile = fopen("/home/mark/playlist", "r");
+            FILE* pFile = fopen("../../../playlist", "r");
             fgets(TitleToPlay, PATH_MAX, pFile);
             fclose(pFile);
 
