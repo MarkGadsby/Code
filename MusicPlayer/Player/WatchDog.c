@@ -11,7 +11,7 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
     if (inotifyFd == -1)
         printf("inotify_init");
 
-    int wd = inotify_add_watch(inotifyFd, "../../../playlist", IN_CLOSE_WRITE);
+    int wd = inotify_add_watch(inotifyFd, "playlist", IN_CLOSE_WRITE);
 
     printf("The watchdog is watching\n");
 
@@ -21,11 +21,13 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
         printf("read error");
     else
     {
+        printf("Got Event\n");
+
         pEvent = (struct inotify_event*) buffer;
 
         if (pEvent->mask & IN_CLOSE_WRITE)
         {
-            FILE* pFile = fopen("../../../playlist", "r");
+            FILE* pFile = fopen("playlist", "r");
             fgets(TitleToPlay, PATH_MAX, pFile);
             fclose(pFile);
 
