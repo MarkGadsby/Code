@@ -20,3 +20,7 @@ void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
 void GetPathFromTitle(char path[PATH_MAX], char artist[NAME_MAX]);
 void PatWatchDog(char Title[PATH_MAX]);
+void GetFileEntry(char Value[], char* pEntry, int nEntryID);
+void GetTitleToPlay(char TitleToPlay[]);
+void GetNextStatus(char NextStatus[]);
+

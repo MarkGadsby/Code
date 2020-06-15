@@ -6,7 +6,14 @@
 /home/mark/Music/Franz Ferdinand/Franz Ferdinand
 /home/mark/Music/Trojan Records/Ska
 /home/mark/Music/Trojan Records/Instrumentals
+/home/mark/Music/Trojan Records/Marley
+/home/mark/Music/Trojan Records/Superstars
 /home/mark/Music/Trojan Records/Rocksteady
+/home/mark/Music/Trojan Records/Dub
+/home/mark/Music/Trojan Records/Producers
+/home/mark/Music/Trojan Records/Roots
+/home/mark/Music/Trojan Records/DJs
+/home/mark/Music/Trojan Records/Lovers Rock
 /home/mark/Music/Cornershop/When I Was Born for the 7th Time
 /home/mark/Music/TV on the Radio/Dear Science
 /home/mark/Music/Beth Orton/Kidsticks
@@ -14,14 +21,10 @@
 /home/mark/Music/Orchestra Baobab/Specialist in All Styles
 /home/mark/Music/Orchestra Baobab/Pirates Choice
 /home/mark/Music/Beck/Sea Change
-/home/mark/Music/The Garifuna Women's Project/Umalali
-/home/mark/Music/Lo'Jo/L'une des siens
 /home/mark/Music/Baaba Maal/missing you (mi yeewnii)
 /home/mark/Music/Baaba Maal/Television
 /home/mark/Music/Edwyn Collins/Gorgeous George
 /home/mark/Music/Legends of Benin
-/home/mark/Music/Múm/Summer Make Good
-/home/mark/Music/Múm/Finally We Are No One
 /home/mark/Music/Erased Tapes/Collection VIII
 /home/mark/Music/Erased Tapes/Collection VII
 /home/mark/Music/Erased Tapes/Collection IV
@@ -41,6 +44,8 @@
 /home/mark/Music/Lambchop/Mr. M
 /home/mark/Music/Gregory Isaacs/Mr. Isaacs
 /home/mark/Music/Jack White/Blunderbuss
+/home/mark/Music/Rachid Taha/Made in Medina
+/home/mark/Music/Rachid Taha/Tekitoi
 /home/mark/Music/Yo La Tengo/And Then Nothing Turned Itself Inside-Out
 /home/mark/Music/Yo La Tengo/Summer Sun
 /home/mark/Music/Yo La Tengo/Popular Songs
@@ -57,6 +62,8 @@
 /home/mark/Music/Moon Duo/Circles
 /home/mark/Music/Young Fathers/Cocoa Sugar
 /home/mark/Music/Phosphorescent/C'est La Vie
+/home/mark/Music/Mum/Summer Make Good
+/home/mark/Music/Mum/Finally We Are No One
 /home/mark/Music/Trailer Trash Tracys/Ester
 /home/mark/Music/Valerie June/The Order of Time
 /home/mark/Music/Jens Lekman/I Know What Love Isn't
@@ -76,6 +83,7 @@
 /home/mark/Music/Culture/Harder Than the Rest
 /home/mark/Music/Culture/Two Sevens Clash
 /home/mark/Music/Agnes Obel/Aventine
+/home/mark/Music/Ali Farka Toure & Toumani Diabate/Ali & Toumani
 /home/mark/Music/The Upsetters/Super Ape
 /home/mark/Music/Fleet Foxes/Fleet Foxes
 /home/mark/Music/Cat Power/You Are Free
@@ -160,7 +168,6 @@
 /home/mark/Music/Public Service Broadcasting/Live in Brixton
 /home/mark/Music/Public Service Broadcasting/Inform - Educate - Entertain
 /home/mark/Music/Public Service Broadcasting/Every Valley
-/home/mark/Music/Youssou N'Dour/Egypt
 /home/mark/Music/The Ruts/The Crack
 /home/mark/Music/Wild Beasts/Present Tense
 /home/mark/Music/Burning Spear/Man in the Hills
@@ -187,9 +194,10 @@
 /home/mark/Music/US Girls/In a Poem Unlimited
 /home/mark/Music/London Elektricity/Syncopated City
 /home/mark/Music/Lianne Hall/Crossing Wires
+/home/mark/Music/LoJo/L'une des siens
 /home/mark/Music/Interpol/Turn On The Bright Lights
 /home/mark/Music/Interpol/Antics
-/home/mark/Music/Manu Chao/Próxima estación_ Esperanza
+/home/mark/Music/Manu Chao/Proxima estacion_ Esperanza
 /home/mark/Music/Peaking Lights/936
 /home/mark/Music/Johnny Cash/At Folsom Prison
 /home/mark/Music/Nadia Reid/Preservation
@@ -226,6 +234,7 @@
 /home/mark/Music/Nadine Shah/Fast Food
 /home/mark/Music/Nadine Shah/Holiday Destination
 /home/mark/Music/The Twilight Sad/Fourteen Autumns & Fifteen Winters
+/home/mark/Music/The Twilight Sad/The Twilight Sad Killed My Parents and Hit the Road
 /home/mark/Music/The Twilight Sad/Nobody Wants to be Here and Nobody Wants to Leave
 /home/mark/Music/Echo & The Bunnymen/The Best of Echo & The Bunnymen
 /home/mark/Music/LJ Kruzer/Manhood & Electronics
@@ -233,9 +242,9 @@
 /home/mark/Music/Aldous Harding/Party
 /home/mark/Music/Aldous Harding/Designer
 /home/mark/Music/Robert Plant & Alison Krauss/Raising Sand
+/home/mark/Music/The Garifuna Womens Project/Umalali
 /home/mark/Music/The War On Drugs/A Deeper Understanding
 /home/mark/Music/Ifriqiyya Electrique/Ruwahine
-/home/mark/Music/Ali Farka Touré & Toumani Diabaté/Ali & Toumani
 /home/mark/Music/Bon Iver/Bon Iver
 /home/mark/Music/Bon Iver/22, A Million
 /home/mark/Music/A Winged Victory for the Sullen/The Undivided Five
@@ -260,6 +269,7 @@
 /home/mark/Music/Fujiya & Miyagi/Transparent Things
 /home/mark/Music/Yasushi Yoshida/Secret Figure
 /home/mark/Music/Thelonious Monk/Monk, Alone In Paris
+/home/mark/Music/Abyssinia Infinite/Zion Roots
 /home/mark/Music/Our Broken Garden/Lost Sailor
 /home/mark/Music/Radiohead/A Moon Shaped Pool
 /home/mark/Music/Caribou/Swim
@@ -286,6 +296,7 @@
 /home/mark/Music/Vic Chesnutt/At the Cut
 /home/mark/Music/Vic Chesnutt/North Star Deserter
 /home/mark/Music/Vic Chesnutt/Dark Developments
+/home/mark/Music/Youssou NDour/Egypt
 /home/mark/Music/Zombie Zombie/A Land for Renegades
 /home/mark/Music/The Harder They Come
 /home/mark/Music/EMA/The Future's Void
@@ -323,6 +334,7 @@
 /home/mark/Music/Leftfield/Leftism
 /home/mark/Music/Singerman
 /home/mark/Music/Fear of Men/Fall Forever
+/home/mark/Music/Julia Kent/Temporal
 /home/mark/Music/Julia Kent/Asperities
 /home/mark/Music/Rough Trade/25 Years
 /home/mark/Music/Cocoon/My Friends All Died In A Plane Crash
