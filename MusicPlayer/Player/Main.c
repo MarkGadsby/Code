@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 
     GetPathFromTitle(PlayPath, TitleToPlay);
 
+    printf("%s", PlayPath);
+
     struct TrackInfo trackArray[MAX_ALBUM_TRACKS]; // Allocate track info
     memset(trackArray, 0, MAX_ALBUM_TRACKS * sizeof(struct TrackInfo));
 
