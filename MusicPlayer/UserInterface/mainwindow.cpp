@@ -125,7 +125,7 @@ void MainWindow::PlayTitle(QTreeWidgetItem *item, int)
     Title.insert(0,"\"");
     Title.append("\"");
     QStringList arguments;
-    arguments << "pi@192.168.1.5" << "Code/MusicPlayer/Player/MusicPlayer" << Title;
+    arguments << "pi@192.168.1.6" << "Code/MusicPlayer/Player/MusicPlayer" << Title;
 
     QProcess *myProcess = new QProcess(this);
     myProcess->start(program, arguments);

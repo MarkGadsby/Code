@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/pi/Music/Gazelle Twin/Pastoral
 /home/pi/Music/Rain Machine/Rain Machine
 /home/pi/Music/Menace Beach/Lemon Memory
@@ -350,3 +351,357 @@
 /home/pi/Music/Glasvegas/Glasvegas
 /home/pi/Music/Phosphorescent/C'est La Vie
 /home/pi/Music/Ali Farka Toure & Toumani Diabate/Ali & Toumani
+=======
+/home/mark/Music/Robert Wyatt/Cuckooland
+/home/mark/Music/Robert Wyatt/Rock Bottom
+/home/mark/Music/The Clash/London Calling
+/home/mark/Music/African Head Charge/Songs of Praise
+/home/mark/Music/Sonya Jabarteh/Fasiya
+/home/mark/Music/Franz Ferdinand/Franz Ferdinand
+/home/mark/Music/Trojan Records/Ska
+/home/mark/Music/Trojan Records/Instrumentals
+/home/mark/Music/Trojan Records/Marley
+/home/mark/Music/Trojan Records/Superstars
+/home/mark/Music/Trojan Records/Rocksteady
+/home/mark/Music/Trojan Records/Dub
+/home/mark/Music/Trojan Records/Producers
+/home/mark/Music/Trojan Records/Roots
+/home/mark/Music/Trojan Records/DJs
+/home/mark/Music/Trojan Records/Lovers Rock
+/home/mark/Music/Cornershop/When I Was Born for the 7th Time
+/home/mark/Music/TV on the Radio/Dear Science
+/home/mark/Music/Beth Orton/Kidsticks
+/home/mark/Music/Orchestra Baobab/Made In Dakar
+/home/mark/Music/Orchestra Baobab/Specialist in All Styles
+/home/mark/Music/Orchestra Baobab/Pirates Choice
+/home/mark/Music/Beck/Sea Change
+/home/mark/Music/Baaba Maal/missing you (mi yeewnii)
+/home/mark/Music/Baaba Maal/Television
+/home/mark/Music/Edwyn Collins/Gorgeous George
+/home/mark/Music/Legends of Benin
+/home/mark/Music/Erased Tapes/Collection VIII
+/home/mark/Music/Erased Tapes/Collection VII
+/home/mark/Music/Erased Tapes/Collection IV
+/home/mark/Music/Erased Tapes/Collection IX
+/home/mark/Music/Erased Tapes/Collection VI
+/home/mark/Music/Porridge Radio/Every Bad
+/home/mark/Music/Festival in the Desert
+/home/mark/Music/Kathryn Joseph/From When I Wake The Want Is
+/home/mark/Music/The Knife/Tomorrow, in a Year
+/home/mark/Music/The Knife/Shaking the Habitual
+/home/mark/Music/The Knife/Silent Shout
+/home/mark/Music/The Knife/Deep Cuts
+/home/mark/Music/PJ Harvey/Stories From the City, Stories From the Sea
+/home/mark/Music/PJ Harvey/Dry
+/home/mark/Music/PJ Harvey/Let England Shake
+/home/mark/Music/PJ Harvey/The Hope Six Demolition Project
+/home/mark/Music/Lambchop/Is a Woman
+/home/mark/Music/Lambchop/Mr. M
+/home/mark/Music/Gregory Isaacs/Mr. Isaacs
+/home/mark/Music/Jack White/Blunderbuss
+/home/mark/Music/Rachid Taha/Made in Medina
+/home/mark/Music/Rachid Taha/Tekitoi
+/home/mark/Music/Yo La Tengo/And Then Nothing Turned Itself Inside-Out
+/home/mark/Music/Yo La Tengo/Summer Sun
+/home/mark/Music/Yo La Tengo/Popular Songs
+/home/mark/Music/Yo La Tengo/I Can Hear the Heart Beating as One
+/home/mark/Music/Nick Cave & The Bad Seeds/Distant Sky
+/home/mark/Music/Nick Cave & The Bad Seeds/Dig, Lazarus, Dig!!!
+/home/mark/Music/Nick Cave & The Bad Seeds/Ghosteen
+/home/mark/Music/Kim Gordon/No Home Record
+/home/mark/Music/The Afghan Whigs/1965
+/home/mark/Music/The Afghan Whigs/Black Love
+/home/mark/Music/Marvin Gaye/What's Going On
+/home/mark/Music/Pins/Wild Nights
+/home/mark/Music/Saloon/If We Meet In The Future
+/home/mark/Music/Moon Duo/Circles
+/home/mark/Music/Young Fathers/Cocoa Sugar
+/home/mark/Music/Phosphorescent/C'est La Vie
+/home/mark/Music/Mum/Summer Make Good
+/home/mark/Music/Mum/Finally We Are No One
+/home/mark/Music/Trailer Trash Tracys/Ester
+/home/mark/Music/Valerie June/The Order of Time
+/home/mark/Music/Jens Lekman/I Know What Love Isn't
+/home/mark/Music/Jens Lekman/Night Falls Over Kortedala
+/home/mark/Music/Jens Lekman/Life Will See You Now
+/home/mark/Music/W. H. Lung/Incidental Music
+/home/mark/Music/Soul Jazz Records/Deutsche Elektronische Musik
+/home/mark/Music/Soul Jazz Records/Dancehall II
+/home/mark/Music/Soul Jazz Records/Dancehall
+/home/mark/Music/Soul Jazz Records/Studio One Rocksteady
+/home/mark/Music/Soul Jazz Records/Dub Echoes
+/home/mark/Music/Soul Jazz Records/Impact!
+/home/mark/Music/Ezra Furman/Transangelic Exodus
+/home/mark/Music/ABBA/The Visitors
+/home/mark/Music/Santogold/Santogold
+/home/mark/Music/Culture/International Herb
+/home/mark/Music/Culture/Harder Than the Rest
+/home/mark/Music/Culture/Two Sevens Clash
+/home/mark/Music/Agnes Obel/Aventine
+/home/mark/Music/Ali Farka Toure & Toumani Diabate/Ali & Toumani
+/home/mark/Music/The Upsetters/Super Ape
+/home/mark/Music/Fleet Foxes/Fleet Foxes
+/home/mark/Music/Cat Power/You Are Free
+/home/mark/Music/Cat Power/The Greatest
+/home/mark/Music/Micah P. Hinson/At the BBC
+/home/mark/Music/Micah P. Hinson/Micah P. Hinson and the Pioneer Saboteurs
+/home/mark/Music/Micah P. Hinson/Micah P. Hinson and the Red Empire Orchestra
+/home/mark/Music/My Bloody Valentine/m b v
+/home/mark/Music/Animal Collective/Merriweather Post Pavilion
+/home/mark/Music/Thee Oh Sees/A Weird Exits
+/home/mark/Music/Seagulls Ska/Tom Hark
+/home/mark/Music/The Bristol Reggae Explosion 1978-1983
+/home/mark/Music/The Sisters of Mercy/Floodland
+/home/mark/Music/The Sisters of Mercy/First and Last and Always
+/home/mark/Music/Teleman/Breakfast
+/home/mark/Music/Teleman/Brilliant Sanity
+/home/mark/Music/Dextro/Consequence Music
+/home/mark/Music/Neneh Cherry & The Thing/The Cherry Thing
+/home/mark/Music/Ben Lukas Boysen/Spells
+/home/mark/Music/King Tubby/Declaration of Dub
+/home/mark/Music/King Tubby/Crucial Dub
+/home/mark/Music/King Tubby/King Dub
+/home/mark/Music/King Tubby/Dub Fever
+/home/mark/Music/Mary Gauthier/Genesis
+/home/mark/Music/Mary Gauthier/The Foundling
+/home/mark/Music/Silly Walks Discotheque/Brighter Days Riddim
+/home/mark/Music/Hollie Cook/Twice
+/home/mark/Music/Cornell Campbell Meets Soothsayers/Nothing Can Stop Us
+/home/mark/Music/The Low Anthem/Oh My God, Charlie Darwin
+/home/mark/Music/Preoccupations/New Material
+/home/mark/Music/Menace Beach/Lemon Memory
+/home/mark/Music/Menace Beach/Ratworld
+/home/mark/Music/Mirel Wagner/When the Cellar Children See the Light of Day
+/home/mark/Music/Africafunk
+/home/mark/Music/Pond/Man It Feels Like Space Again
+/home/mark/Music/The Specials/The Specials
+/home/mark/Music/The Specials/The Specials Singles
+/home/mark/Music/Aurelio Martinez/Laru Beya
+/home/mark/Music/Bob Mould/Life and Times
+/home/mark/Music/Bob Mould/District Line
+/home/mark/Music/Bob Mould/Silver Age
+/home/mark/Music/Pop Ambient 2009
+/home/mark/Music/Massive Attack/Protection
+/home/mark/Music/Laura Veirs/The Lookout
+/home/mark/Music/Salif Keita/Moffou
+/home/mark/Music/Suede/Coming Up
+/home/mark/Music/Gazelle Twin/Pastoral
+/home/mark/Music/Steel Pulse/Hansworth Revolution
+/home/mark/Music/Olafur Arnalds/Living Room Songs
+/home/mark/Music/Sam Beam & Jesca Hoop/Love Letter For Fire
+/home/mark/Music/Black Mountain/Wilderness Heart
+/home/mark/Music/Blondie/Parallel Lines
+/home/mark/Music/The National/Trouble Will Find Me
+/home/mark/Music/The National/Boxer
+/home/mark/Music/The National/Sleep Well Beast
+/home/mark/Music/The National/High Violet
+/home/mark/Music/The National/Sad Songs for Dirty Lovers
+/home/mark/Music/Planningtorock/All Love's Legal
+/home/mark/Music/Julie Doiron/I Can Wonder What You Did With Your Day
+/home/mark/Music/The Errors/Celebrity Come Down With Me
+/home/mark/Music/Dub Colossus/A Town Called Addis
+/home/mark/Music/Dub Colossus/Dub Me Tender
+/home/mark/Music/Danger Mouse and Sparklehorse/Dark Night of the Soul
+/home/mark/Music/Sizzla/Royal Son of Ethiopia
+/home/mark/Music/DJ Shadow/Endtroducing
+/home/mark/Music/Fat Cat Records/Floored Memory... Fading Location
+/home/mark/Music/Wildbirds & Peacedrums/The Snake
+/home/mark/Music/Jesca Hoop/Memories Are Now
+/home/mark/Music/Ali Farka Toure/Savane
+/home/mark/Music/Calexico/Carried to Dust
+/home/mark/Music/Glasvegas/Glasvegas
+/home/mark/Music/Iron & Wire/Our Endless Numbered Days
+/home/mark/Music/Autobahn/The Moral Crossing
+/home/mark/Music/Emily Barker/Photos. Fires. Fables
+/home/mark/Music/Bob Marley & The Wailers/Burnin'
+/home/mark/Music/Bob Marley & The Wailers/Natty Dread
+/home/mark/Music/Bob Marley & The Wailers/Catch a Fire
+/home/mark/Music/Bob Marley & The Wailers/Exodus
+/home/mark/Music/Fever Ray/Fever Ray
+/home/mark/Music/Fever Ray/Live in Lulea
+/home/mark/Music/Fever Ray/Plunge
+/home/mark/Music/Public Service Broadcasting/The Race For Space
+/home/mark/Music/Public Service Broadcasting/Live in Brixton
+/home/mark/Music/Public Service Broadcasting/Inform - Educate - Entertain
+/home/mark/Music/Public Service Broadcasting/Every Valley
+/home/mark/Music/The Ruts/The Crack
+/home/mark/Music/Wild Beasts/Present Tense
+/home/mark/Music/Burning Spear/Man in the Hills
+/home/mark/Music/Burning Spear/Marcus Garvey - Garvey's Ghost
+/home/mark/Music/Sufjan Stevens/Carrie and Lowell
+/home/mark/Music/Elvis Costello/My Aim Is True
+/home/mark/Music/Molly/All That Ever Could Have Been
+/home/mark/Music/Metronomy/Im Aquarius
+/home/mark/Music/Metronomy/Love Letters
+/home/mark/Music/Metronomy/Forever
+/home/mark/Music/Metronomy/The English Riviera
+/home/mark/Music/Lali Puna/Faking the Books
+/home/mark/Music/Lali Puna/I Thought I Was Over That
+/home/mark/Music/Lali Puna/Scary World Theory
+/home/mark/Music/Lali Puna/Tridecoder
+/home/mark/Music/Jessica Moss/Entanglement
+/home/mark/Music/Etana/The Strong One
+/home/mark/Music/Vermont/Vermont
+/home/mark/Music/Mark Lanegan/Gargoyle
+/home/mark/Music/Mark Lanegan/Bubblegum
+/home/mark/Music/Mark Lanegan/BluesFuneral
+/home/mark/Music/Mark Lanegan/SomebodysKnocking
+/home/mark/Music/Perfume Genius/No Shape
+/home/mark/Music/Ohbijou/Beacons
+/home/mark/Music/US Girls/In a Poem Unlimited
+/home/mark/Music/London Elektricity/Syncopated City
+/home/mark/Music/Lianne Hall/Crossing Wires
+/home/mark/Music/LoJo/L'une des siens
+/home/mark/Music/Interpol/Turn On The Bright Lights
+/home/mark/Music/Interpol/Antics
+/home/mark/Music/Manu Chao/Proxima estacion_ Esperanza
+/home/mark/Music/Peaking Lights/936
+/home/mark/Music/Johnny Cash/At Folsom Prison
+/home/mark/Music/Nadia Reid/Preservation
+/home/mark/Music/Nadia Reid/Out of My Province
+/home/mark/Music/Darren Hayman/Chants for Socialists
+/home/mark/Music/Darren Hayman/Florence
+/home/mark/Music/Darren Hayman/The Violence
+/home/mark/Music/Darren Hayman/The Secondary Modern
+/home/mark/Music/Morrissey/Your Arsenal
+/home/mark/Music/Shearwater/Jet Plane and Oxbow
+/home/mark/Music/Shearwater/The Golden Archipelago
+/home/mark/Music/Sly & Robbie/Blackwood Dub
+/home/mark/Music/Jah Wobble/Japanese Dub
+/home/mark/Music/Grinderman/Grinderman 2
+/home/mark/Music/Gui Boratto/III
+/home/mark/Music/The Shins/Chutes Too Narrow
+/home/mark/Music/Angel Olson/Burn Your Fire For No Witness
+/home/mark/Music/Black Uhuru/Red
+/home/mark/Music/The Avalanches/Since I Left You
+/home/mark/Music/Teenage Fanclub/Here
+/home/mark/Music/The Murder Capital/When I Have Fears
+/home/mark/Music/The Jesus & Mary Chain/Psychocandy
+/home/mark/Music/The Smiths/Louder Than Bombs
+/home/mark/Music/The Smiths/Meat Is Murder
+/home/mark/Music/The Smiths/The Queen Is Dead
+/home/mark/Music/The Smiths/Hatful of Hollow
+/home/mark/Music/The Smiths/Strangeways, Here We Come
+/home/mark/Music/Los de Abajo/Cybertropic Chilango Power
+/home/mark/Music/Los de Abajo/Lda V the Lunatics
+/home/mark/Music/Daughter/Not To Disappear
+/home/mark/Music/Daughter/If You Leave
+/home/mark/Music/Junior Murvin/Police and Thieves
+/home/mark/Music/Rozi Plain/Friend
+/home/mark/Music/Nadine Shah/Fast Food
+/home/mark/Music/Nadine Shah/Holiday Destination
+/home/mark/Music/The Twilight Sad/Fourteen Autumns & Fifteen Winters
+/home/mark/Music/The Twilight Sad/Killed My Parents and Hit the Road
+/home/mark/Music/The Twilight Sad/Nobody Wants to be Here and Nobody Wants to Leave
+/home/mark/Music/Echo & The Bunnymen/The Best of Echo & The Bunnymen
+/home/mark/Music/LJ Kruzer/Manhood & Electronics
+/home/mark/Music/Screaming Trees/Dust
+/home/mark/Music/Aldous Harding/Party
+/home/mark/Music/Aldous Harding/Designer
+/home/mark/Music/Robert Plant & Alison Krauss/Raising Sand
+/home/mark/Music/The Garifuna Womens Project/Umalali
+/home/mark/Music/The War On Drugs/A Deeper Understanding
+/home/mark/Music/Ifriqiyya Electrique/Ruwahine
+/home/mark/Music/Bon Iver/Bon Iver
+/home/mark/Music/Bon Iver/22, A Million
+/home/mark/Music/A Winged Victory for the Sullen/The Undivided Five
+/home/mark/Music/A Winged Victory for the Sullen/Atomos
+/home/mark/Music/Lanterns on the Lake/Gracious Tide, Take Me Home
+/home/mark/Music/Lanterns on the Lake/Until the Colours Run
+/home/mark/Music/Sparklehorse/It's a Wonderful Life
+/home/mark/Music/Sparklehorse/Vivadixiesubmarinetransmissionplot
+/home/mark/Music/Sparklehorse/Good Morning Spider
+/home/mark/Music/Sparklehorse/Dreamt for Light Years in the Belly of a Mountain
+/home/mark/Music/Daft Punk/Homework
+/home/mark/Music/Konono Nº1/Assume Crash Position
+/home/mark/Music/Marissa Nadler/July
+/home/mark/Music/Godspeed You! Black Emperor/Yanqui U.X.O
+/home/mark/Music/Godspeed You! Black Emperor/Asunder, Sweet And Other Distress'
+/home/mark/Music/Rival Consoles/Persona
+/home/mark/Music/African Scream Contest
+/home/mark/Music/Lemon Jelly/Lost Horizons
+/home/mark/Music/Lemon Jelly/The Bath EP -  The Yellow EP - The Midnight EP
+/home/mark/Music/Fujiya & Miyagi/Lightbulbs
+/home/mark/Music/Fujiya & Miyagi/Ventriloquizzing
+/home/mark/Music/Fujiya & Miyagi/Transparent Things
+/home/mark/Music/Yasushi Yoshida/Secret Figure
+/home/mark/Music/Thelonious Monk/Monk, Alone In Paris
+/home/mark/Music/Abyssinia Infinite/Zion Roots
+/home/mark/Music/Our Broken Garden/Lost Sailor
+/home/mark/Music/Radiohead/A Moon Shaped Pool
+/home/mark/Music/Caribou/Swim
+/home/mark/Music/Spiritualized/Ladies and Gentlemen We Are Floating in Space
+/home/mark/Music/Max Richter/Memoryhouse
+/home/mark/Music/Max Richter/24 Postcards in Full Colour
+/home/mark/Music/Max Richter/From Sleep
+/home/mark/Music/Max Richter/The Blue Notebooks
+/home/mark/Music/Rain Machine/Rain Machine
+/home/mark/Music/Cold Specks/I Predict a Graceful Expulsion
+/home/mark/Music/Jon Hopkins/Immunity
+/home/mark/Music/Mbongwana Star/From Kinshasa
+/home/mark/Music/Jackie Mittoo/The Keyboard King at Studio One
+/home/mark/Music/Polica/Give You The Ghost
+/home/mark/Music/Francois And The Atlas Mountains/E Volo Love
+/home/mark/Music/King Creosote/KC Rules OK
+/home/mark/Music/King Creosote/Astronaut Meets Appleman
+/home/mark/Music/Isobel Campbell & Mark Lanegan/Ballad of the Broken Seas
+/home/mark/Music/Orbital/In Sides
+/home/mark/Music/Resident Music/Sampler #11 2018
+/home/mark/Music/Resident Music/Resident Sampler #12
+/home/mark/Music/HTRK/Marry Me Tonight
+/home/mark/Music/Efterklang/Magic Chairs
+/home/mark/Music/Vic Chesnutt/At the Cut
+/home/mark/Music/Vic Chesnutt/North Star Deserter
+/home/mark/Music/Vic Chesnutt/Dark Developments
+/home/mark/Music/Youssou NDour/Egypt
+/home/mark/Music/Zombie Zombie/A Land for Renegades
+/home/mark/Music/The Harder They Come
+/home/mark/Music/EMA/The Future's Void
+/home/mark/Music/EMA/Past Life Martyred Saints
+/home/mark/Music/Roni Size & Reprazent/New Forms
+/home/mark/Music/The Miserable Rich/Under Glass EP
+/home/mark/Music/The Miserable Rich/12 Ways to Count
+/home/mark/Music/The Miserable Rich/Everything You Wanted
+/home/mark/Music/Lee Scratch Perry/I Am The Upsetter 1972 to 1974
+/home/mark/Music/Lee Scratch Perry/Arkology II
+/home/mark/Music/Lee Scratch Perry/I Am The Upsetter 1975 to 1978
+/home/mark/Music/Lee Scratch Perry/I Am The Upsetter 1968 to 1971
+/home/mark/Music/Lee Scratch Perry/I Am The Upsetter 1974 to 1978
+/home/mark/Music/Lee Scratch Perry/Arkology
+/home/mark/Music/Lee Scratch Perry/Arkology III
+/home/mark/Music/Sharon Van Etten/Are We There
+/home/mark/Music/Sharon Van Etten/Tramp
+/home/mark/Music/Sharon Van Etten/Remind Me Tomorrow
+/home/mark/Music/Girl Band/Holding Hands With Jamie
+/home/mark/Music/Waxahatchee/Out in the Storm
+/home/mark/Music/Mice Parade/What It Means To Be Left-Handed
+/home/mark/Music/Mice Parade/Mice Parade
+/home/mark/Music/Heaven 17/Penthose and Pavement
+/home/mark/Music/First Aid Kit/The Lion's Roar
+/home/mark/Music/Brian Eno/Before and After Science
+/home/mark/Music/The Black Heart Procession/1
+/home/mark/Music/The Black Heart Procession/Three
+/home/mark/Music/Nigeria Afrobeat Special
+/home/mark/Music/Sky Larkin/Kaleide
+/home/mark/Music/Lower Dens/Nootropics
+/home/mark/Music/Austra/Feel It Break
+/home/mark/Music/Nina Nastasia/On Leaving
+/home/mark/Music/Nina Nastasia/Outlaster
+/home/mark/Music/Dread Meets Punk Rockers Uptown
+/home/mark/Music/Leftfield/Leftism
+/home/mark/Music/Singerman
+/home/mark/Music/Fear of Men/Fall Forever
+/home/mark/Music/Julia Kent/Temporal
+/home/mark/Music/Julia Kent/Asperities
+/home/mark/Music/Rough Trade/25 Years
+/home/mark/Music/Cocoon/My Friends All Died In A Plane Crash
+/home/mark/Music/Broken Family Band/Hello Love
+/home/mark/Music/Protomartyr/The Agent Intellect
+/home/mark/Music/Fuck Buttons/Tarot Sport
+/home/mark/Music/St Vincent/Masseduction
+/home/mark/Music/St Vincent/St Vincent
+/home/mark/Music/The Lafayette Afro Rock Band/Darkest Light
+/home/mark/Music/Emma Pollock/In Search of Harperfield
+/home/mark/Music/Swans/My Father Will Guide Me up a Rope to the Sky
+/home/mark/Music/White Night
+>>>>>>> 524d68ef72a719d053656146fc7426a012e83e5a

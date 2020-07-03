@@ -21,15 +21,12 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
         printf("read error");
     else
     {
-        printf("Got Event\n");
-
         pEvent = (struct inotify_event*) buffer;
 
         if (pEvent->mask & IN_CLOSE_WRITE)
         {
-            FILE* pFile = fopen("playlist", "r");
-            fgets(TitleToPlay, PATH_MAX, pFile);
-            fclose(pFile);
+            GetTitleToPlay(TitleToPlay);
+            printf("Title to play is: %s",TitleToPlay);
 
             int len = strlen(TitleToPlay);
             if (TitleToPlay[len - 1] == '\n')

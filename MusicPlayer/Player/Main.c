@@ -9,7 +9,7 @@
 //
 // To build this file:
 //
-// gcc -W -o MusicPlayer Main.c MySQL.c PCM.c Vorbis.c WatchDog.c -lasound -lvorbisfile -lmysqlclient
+// gcc -W -o MusicPlayer Main.c MySQL.c PCM.c Vorbis.c WatchDog.c FileManager.c -lasound -lvorbisfile -lmysqlclient
 //
 // This file will use the alsa lib to set up the pulse-code modulation interface 
 // (PCM) to play output and use the vorbis lib to read in a .ogg file and pass
@@ -73,10 +73,14 @@ int main(int argc, char *argv[])
         ov_clear(&trackArray[i].VorbisFile);   // clear the decoder's buffers
         free(buffer);                           // free the buffer memory
         snd_pcm_drain(pcmHandle);               // stop a PCM preserving pending frames
+
+        // Check for stop request
+        char Stop[NAME_MAX];
+        GetStop(Stop);
+        if (strcmp(Stop,"true"))
+            i = ArrayTotal;
     }
-
     snd_pcm_close(pcmHandle);   // close PCM handle 
-
     return 1;
 }
 
