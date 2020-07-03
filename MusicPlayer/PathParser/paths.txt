@@ -30,6 +30,7 @@
 /home/mark/Music/Erased Tapes/Collection IV
 /home/mark/Music/Erased Tapes/Collection IX
 /home/mark/Music/Erased Tapes/Collection VI
+/home/mark/Music/Porridge Radio/Every Bad
 /home/mark/Music/Festival in the Desert
 /home/mark/Music/Kathryn Joseph/From When I Wake The Want Is
 /home/mark/Music/The Knife/Tomorrow, in a Year
@@ -164,6 +165,7 @@
 /home/mark/Music/Bob Marley & The Wailers/Exodus
 /home/mark/Music/Fever Ray/Fever Ray
 /home/mark/Music/Fever Ray/Live in Lulea
+/home/mark/Music/Fever Ray/Plunge
 /home/mark/Music/Public Service Broadcasting/The Race For Space
 /home/mark/Music/Public Service Broadcasting/Live in Brixton
 /home/mark/Music/Public Service Broadcasting/Inform - Educate - Entertain
@@ -189,6 +191,7 @@
 /home/mark/Music/Mark Lanegan/Gargoyle
 /home/mark/Music/Mark Lanegan/Bubblegum
 /home/mark/Music/Mark Lanegan/BluesFuneral
+/home/mark/Music/Mark Lanegan/SomebodysKnocking
 /home/mark/Music/Perfume Genius/No Shape
 /home/mark/Music/Ohbijou/Beacons
 /home/mark/Music/US Girls/In a Poem Unlimited
@@ -234,7 +237,7 @@
 /home/mark/Music/Nadine Shah/Fast Food
 /home/mark/Music/Nadine Shah/Holiday Destination
 /home/mark/Music/The Twilight Sad/Fourteen Autumns & Fifteen Winters
-/home/mark/Music/The Twilight Sad/The Twilight Sad Killed My Parents and Hit the Road
+/home/mark/Music/The Twilight Sad/Killed My Parents and Hit the Road
 /home/mark/Music/The Twilight Sad/Nobody Wants to be Here and Nobody Wants to Leave
 /home/mark/Music/Echo & The Bunnymen/The Best of Echo & The Bunnymen
 /home/mark/Music/LJ Kruzer/Manhood & Electronics
@@ -346,3 +349,4 @@
 /home/mark/Music/The Lafayette Afro Rock Band/Darkest Light
 /home/mark/Music/Emma Pollock/In Search of Harperfield
 /home/mark/Music/Swans/My Father Will Guide Me up a Rope to the Sky
+/home/mark/Music/White Night

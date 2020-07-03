@@ -22,8 +22,8 @@ void GetTitleToPlay(char TitleToPlay[])
     GetFileEntry(TitleToPlay, "Title=", 6);
 }
 
-void GetNextStatus(char NextStatus[])
+void GetStop(char Stop[])
 {
-    GetFileEntry(NextStatus, "Status=", 7);
+    GetFileEntry(Stop, "Stop=", 5);
 }
 

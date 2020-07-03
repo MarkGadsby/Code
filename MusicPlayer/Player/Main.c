@@ -75,9 +75,9 @@ int main(int argc, char *argv[])
         snd_pcm_drain(pcmHandle);               // stop a PCM preserving pending frames
 
         // Check for stop request
-        char Status[NAME_MAX];
-        GetNextStatus(Status);
-        if (strcmp(Status,"StopAfterTrack"))
+        char Stop[NAME_MAX];
+        GetStop(Stop);
+        if (strcmp(Stop,"true"))
             i = ArrayTotal;
     }
     snd_pcm_close(pcmHandle);   // close PCM handle 

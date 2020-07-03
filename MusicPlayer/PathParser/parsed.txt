@@ -30,6 +30,7 @@
 /home/mark/Music/Erased Tapes/Collection IV	0	Erased Tapes	Collection IV
 /home/mark/Music/Erased Tapes/Collection IX	0	Erased Tapes	Collection IX
 /home/mark/Music/Erased Tapes/Collection VI	0	Erased Tapes	Collection VI
+/home/mark/Music/Porridge Radio/Every Bad	0	Porridge Radio	Every Bad
 /home/mark/Music/Festival in the Desert	0	Festival in the Desert	Festival in the Desert
 /home/mark/Music/Kathryn Joseph/From When I Wake The Want Is	0	Kathryn Joseph	From When I Wake The Want Is
 /home/mark/Music/The Knife/Tomorrow, in a Year	0	The Knife	Tomorrow, in a Year
@@ -164,6 +165,7 @@
 /home/mark/Music/Bob Marley & The Wailers/Exodus	0	Bob Marley & The Wailers	Exodus
 /home/mark/Music/Fever Ray/Fever Ray	0	Fever Ray	Fever Ray
 /home/mark/Music/Fever Ray/Live in Lulea	0	Fever Ray	Live in Lulea
+/home/mark/Music/Fever Ray/Plunge	0	Fever Ray	Plunge
 /home/mark/Music/Public Service Broadcasting/The Race For Space	0	Public Service Broadcasting	The Race For Space
 /home/mark/Music/Public Service Broadcasting/Live in Brixton	0	Public Service Broadcasting	Live in Brixton
 /home/mark/Music/Public Service Broadcasting/Inform - Educate - Entertain	0	Public Service Broadcasting	Inform - Educate - Entertain
@@ -189,6 +191,7 @@
 /home/mark/Music/Mark Lanegan/Gargoyle	0	Mark Lanegan	Gargoyle
 /home/mark/Music/Mark Lanegan/Bubblegum	0	Mark Lanegan	Bubblegum
 /home/mark/Music/Mark Lanegan/BluesFuneral	0	Mark Lanegan	BluesFuneral
+/home/mark/Music/Mark Lanegan/SomebodysKnocking	0	Mark Lanegan	SomebodysKnocking
 /home/mark/Music/Perfume Genius/No Shape	0	Perfume Genius	No Shape
 /home/mark/Music/Ohbijou/Beacons	0	Ohbijou	Beacons
 /home/mark/Music/US Girls/In a Poem Unlimited	0	US Girls	In a Poem Unlimited
@@ -234,7 +237,7 @@
 /home/mark/Music/Nadine Shah/Fast Food	0	Nadine Shah	Fast Food
 /home/mark/Music/Nadine Shah/Holiday Destination	0	Nadine Shah	Holiday Destination
 /home/mark/Music/The Twilight Sad/Fourteen Autumns & Fifteen Winters	0	The Twilight Sad	Fourteen Autumns & Fifteen Winters
-/home/mark/Music/The Twilight Sad/The Twilight Sad Killed My Parents and Hit the Road	0	The Twilight Sad	The Twilight Sad Killed My Parents and Hit the Road
+/home/mark/Music/The Twilight Sad/Killed My Parents and Hit the Road	0	The Twilight Sad	Killed My Parents and Hit the Road
 /home/mark/Music/The Twilight Sad/Nobody Wants to be Here and Nobody Wants to Leave	0	The Twilight Sad	Nobody Wants to be Here and Nobody Wants to Leave
 /home/mark/Music/Echo & The Bunnymen/The Best of Echo & The Bunnymen	0	Echo & The Bunnymen	The Best of Echo & The Bunnymen
 /home/mark/Music/LJ Kruzer/Manhood & Electronics	0	LJ Kruzer	Manhood & Electronics
