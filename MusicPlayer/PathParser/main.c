@@ -30,15 +30,19 @@ int main()
     }
 
     char path[PATH_MAX];
+    char lineIn[PATH_MAX];
     int firstFolder = 0;        //  forward slash after the base folder; "/home/mark/Music/"
     int secondindex = 0;
 
     while (!feof(paths))
     {
-        fgets(path, PATH_MAX, paths);
+        fgets(lineIn, PATH_MAX, paths);
 
-        char* p = strstr(path, "Music");
+        char* p = strstr(lineIn, "Music");
 
+        strcpy(path,"./");
+        strcat(path, p);
+       
         firstFolder = p - path;
         firstFolder += 6; // "Music/"
         secondindex = 0;
@@ -75,7 +79,7 @@ int main()
         if (path[len - 1] == '\n')
             path[len - 1] = 0;
 
-        strcat(path, "\t0\t");
+        strcat(path, "/\t0\t");
         strcat(path, artist);
         strcat(path, "\t");
         strcat(path, title);
