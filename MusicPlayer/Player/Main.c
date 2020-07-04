@@ -9,7 +9,7 @@
 //
 // To build this file:
 //
-// gcc -W -o MusicPlayer Main.c MySQL.c PCM.c Vorbis.c WatchDog.c FileManager.c -lasound -lvorbisfile -lmysqlclient
+// gcc -W -o MusicPlayer Main.c PCM.c Vorbis.c WatchDog.c FileManager.c -lasound -lvorbisfile -lmysqlclient
 //
 // This file will use the alsa lib to set up the pulse-code modulation interface 
 // (PCM) to play output and use the vorbis lib to read in a .ogg file and pass
@@ -23,17 +23,13 @@ const int MAX_ALBUM_TRACKS = 64;
 
 int main(int argc, char *argv[])
 {
-    char TitleToPlay[PATH_MAX];
-    if (argc == 2)
-        strcpy(TitleToPlay, argv[1]);
-    else
-        PatWatchDog(TitleToPlay);
-
     char PlayPath[PATH_MAX];
+    if (argc == 2)
+        strcpy(PlayPath, argv[1]);
+    else
+        PatWatchDog(PlayPath);
 
-    GetPathFromTitle(PlayPath, TitleToPlay);
-
-    printf("%s", PlayPath);
+    printf("\n%s\n", PlayPath);
 
     struct TrackInfo trackArray[MAX_ALBUM_TRACKS]; // Allocate track info
     memset(trackArray, 0, MAX_ALBUM_TRACKS * sizeof(struct TrackInfo));
