@@ -19,18 +19,34 @@
 #include <stdbool.h>
 #include "MusicPlayer.h"
 
+#include <unistd.h>
+
 const int MAX_ALBUM_TRACKS = 64;
 
 int main(int argc, char *argv[])
 {
     char PlayPath[PATH_MAX];
+    memset(PlayPath, 0, PATH_MAX);
+
     if (argc == 2)
         strcpy(PlayPath, argv[1]);
     else
         PatWatchDog(PlayPath);
 
-    printf("\n%s\n", PlayPath);
+    PlayAlbum(PlayPath);
 
+    while(true)
+    {
+        PatWatchDog(PlayPath);
+        PlayAlbum(PlayPath);
+    }
+
+    return 1;
+}
+
+void PlayAlbum(char* PlayPath)
+{
+    // HexDump ("PlayPath", PlayPath, 64);
     struct TrackInfo trackArray[MAX_ALBUM_TRACKS]; // Allocate track info
     memset(trackArray, 0, MAX_ALBUM_TRACKS * sizeof(struct TrackInfo));
 
@@ -75,18 +91,17 @@ int main(int argc, char *argv[])
         // Check for stop request
         char Stop[NAME_MAX];
         GetStop(Stop);
-        if (strcmp(Stop,"true"))
+        if (strcmp(Stop,"true") == 0)
             i = ArrayTotal;
     }
     snd_pcm_close(pcmHandle);   // close PCM handle 
-    return 1;
 }
 
-void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal)
+void FillTrackFile(struct TrackInfo trackArray[30], const char path[PATH_MAX], int* pArrayTotal)
 {
     DIR*            dir;
     struct dirent*  ent;
-    
+
     if (dir = opendir(path))
     {
         int index = 0;
@@ -97,7 +112,7 @@ void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal
         }
         closedir(dir);
         *pArrayTotal = index; 
-    } 
+    }
 }
 
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
@@ -120,4 +135,61 @@ void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
             } 
         }    
     }
+}
+
+void HexDump (const char * desc, const void * addr, const int len) 
+{
+    int i;
+    unsigned char buff[17];
+    const unsigned char * pc = (const unsigned char *)addr;
+
+    // Output description if given.
+    if (desc != NULL)
+        printf ("%s:\n", desc);
+
+    // Length checks.
+    if (len == 0) {
+        printf("  ZERO LENGTH\n");
+        return;
+    }
+    else if (len < 0) {
+        printf("  NEGATIVE LENGTH: %d\n", len);
+        return;
+    }
+
+    // Process every byte in the data.
+    for (i = 0; i < len; i++) 
+    {
+        // Multiple of 16 means new line (with line offset).
+        if ((i % 16) == 0) 
+        {
+            // Don't print ASCII buffer for the "zeroth" line.
+            if (i != 0)
+                printf ("  %s\n", buff);
+
+            // Output the offset.
+
+            printf ("  %04x ", i);
+        }
+
+        // Now the hex code for the specific character.
+        printf (" %02x", pc[i]);
+
+        // And buffer a printable ASCII character for later.
+
+        if ((pc[i] < 0x20) || (pc[i] > 0x7e)) // isprint() may be better.
+            buff[i % 16] = '.';
+        else
+            buff[i % 16] = pc[i];
+        buff[(i % 16) + 1] = '\0';
+    }
+
+    // Pad out last line if not exactly 16 characters.
+    while ((i % 16) != 0) {
+        printf ("   ");
+        i++;
+    }
+
+    // And print the final ASCII buffer.
+    printf ("  %s\n", buff);
 }

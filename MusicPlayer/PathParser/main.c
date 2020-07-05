@@ -67,17 +67,19 @@ int main()
             strcpy(artist, path + firstFolder);
 
             // lose the trailing new line from 'artist' which was copied from the original 'path'
-            int len = strlen(artist);
-            if (artist[len - 1] == '\n')
-                artist[len - 1] = 0;
+            char* pPos;
+            pPos = strchr(artist, '\r');
+            if (pPos)
+                *pPos = '\0';
 
             strcpy(title, path + firstFolder);
         }
 
         // the new line has been copied to the end of 'title' by now so lose it from the original 'path'
-        int len = strlen(path);
-        if (path[len - 1] == '\n')
-            path[len - 1] = 0;
+        char* pPos;
+        pPos = strchr(path, '\r');
+        if (pPos)
+            *pPos = '\0';
 
         strcat(path, "/\t0\t");
         strcat(path, artist);

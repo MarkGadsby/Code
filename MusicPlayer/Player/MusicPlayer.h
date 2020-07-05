@@ -15,12 +15,13 @@ struct TrackInfo
 // Musicplayer definition file
 void OpenPCM(snd_pcm_t** ppcmHandle);
 unsigned long SetupPCM(snd_pcm_t* pcmHandle);
-void FillTrackFile(struct TrackInfo trackArray[30], char* path, int* pArrayTotal);
+void FillTrackFile(struct TrackInfo trackArray[30], const char* path, int* pArrayTotal);
 void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
-void GetPathFromTitle(char path[PATH_MAX], char artist[NAME_MAX]);
-void PatWatchDog(char Title[PATH_MAX]);
-void GetFileEntry(char Value[], char* pEntry, int nEntryID);
-void GetTitleToPlay(char TitleToPlay[]);
-void GetStop(char Stop[]);
+void PatWatchDog(char* Path);
+void PlayAlbum(char* Path);
+void GetFileEntry(char* Value, char* pEntry, int nEntryID);
+void GetPlayPath(char* Path);
+void GetStop(char* Stop);
+void HexDump (const char* desc, const void* addr, const int len); 
 

@@ -25,12 +25,7 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
 
         if (pEvent->mask & IN_CLOSE_WRITE)
         {
-            GetTitleToPlay(TitleToPlay);
-            printf("Title to play is: %s",TitleToPlay);
-
-            int len = strlen(TitleToPlay);
-            if (TitleToPlay[len - 1] == '\n')
-                TitleToPlay[len - 1] = 0;
+            GetPlayPath(TitleToPlay);
         }
     }   
     inotify_rm_watch(inotifyFd, wd);
