@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title>Music Player</title> 
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script> 
+</head>
+<body onload="GetCovers()">
+    <div id="topmenu">
+        <input type="radio" id="tier_one" name="selector" checked>
+        <label for="tier_one">Tier One</label>
+        <input type="radio" id="tier_two" name="selector">
+        <label for="tier_two">Tier Two</label>
+        <input type="radio" id="tier_three" name="selector">
+        <label for="tier_three">Tier Three</label>
+        <br>
+    </div>
+    <p id = "ret"> Return Space</p>
+    <br>
+    <div id="bottommenu">
+        <input type="checkbox" id="stop_play" name="stop_check" unchecked onclick="ClickStopsPlay(this.checked)">
+        <label for="stop_play">Stop playing after this track</label>
+    </div>
+</body>
+</html> 

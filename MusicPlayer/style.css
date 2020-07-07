@@ -1,0 +1,146 @@
+[type="radio"]:checked,
+[type="radio"]:not(:checked) 
+{
+    position: absolute;
+    left: -9999px;
+}
+
+img
+{
+    padding-left: 3px;
+    width: 200px;
+    height: 200px;
+    color: honeydew;
+    font-family: 'Ubuntu';
+    font-size: 12pt;
+}
+
+#topmenu
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-family: 'Ubuntu';
+    font-size: 16pt;
+    background-color:rgb(106, 90, 205,0.80);
+    position: sticky;
+    top: 0; 
+    display: inline;
+}
+#bottommenu
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-family: 'Ubuntu';
+    font-size: 16pt;
+    background-color:rgb(106, 90, 205,0.80);
+    position:  sticky;
+    bottom: 0;
+    display: inline;
+}
+body
+{
+    background-color: slateblue;
+}
+
+/* This is the radio button text */
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: honeydew;
+}
+/* This is the radio button circle */
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:HoneyDew;;
+}
+/* This is the radio button inner circle */
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background:slateblue;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+#bottommenu input[type="checkbox"]
+{
+    display: none;
+}
+
+/* This is the check box text */
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: honeydew; 
+}
+
+/* This is the check box square  */
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before 
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background:HoneyDew;
+}
+
+/* This is the check box inner square */
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after 
+{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background:slateblue;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
