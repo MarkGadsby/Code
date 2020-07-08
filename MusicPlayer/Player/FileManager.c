@@ -21,11 +21,6 @@ void GetFileEntry(char* filename, char* pEntry, int nEntryID, char* Value)
 void GetPlayPath(char* Path)
 {
     GetFileEntry("NowPlaying", "AlbumPath=", 10, Path);
-
-    char* pPos;
-    pPos = strchr(Path, '\r');
-    if (pPos)
-        *pPos = '\0';
 }
 
 void GetStop(char* Stop)
@@ -33,7 +28,7 @@ void GetStop(char* Stop)
     GetFileEntry("MusicPlayer.config", "Stop=", 5, Stop);
 
     char* pPos;
-    pPos = strchr(Stop, '\r');
+    pPos = strchr(Stop, '\n');
     if (pPos)
         *pPos = '\0';
 }
