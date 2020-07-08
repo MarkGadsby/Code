@@ -1,33 +1,24 @@
     <?php
-    $myfile = fopen("playlist", "r+") or die("Unable to open file!");
+    $myfile = fopen("NowPlaying", "r+") or die("Unable to open file!");
     
-    $title;
-    $stop; 
+    $albumpath;
     
     while (!feof($myfile))
     {
         $line = fgets($myfile);
         $explodedLine = explode('=',$line);
 
-        if ($explodedLine[0] == "Title") // reading title line
+        if ($explodedLine[0] == "AlbumPath") // reading title line
         {
-            $title = $line;
+            $albumpath = $line;
 
-            if ($_GET['arg_1'] == "Title")
+            if ($_GET['arg_1'] == "AlbumPath")
             {
                 $decodedArg = urldecode($_GET["arg_2"]);
-                $title = $explodedLine[0]."=".$decodedArg."\r\n";
+                $albumpath = $explodedLine[0]."=".$decodedArg."\r\n";
             }
         }
-
-        if ($explodedLine[0] == 'Stop') // reading stop line
-        {
-            $stop = $line;
-
-            if ($_GET['arg_1'] == "Stop")
-                $stop = $explodedLine[0]."=".$_GET["arg_2"];
-        }
     } 
-    file_put_contents('playlist', $title.$stop);
+    file_put_contents('NowPlaying',$albumpath);
     fclose($myfile);
     ?>

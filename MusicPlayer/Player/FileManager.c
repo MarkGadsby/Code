@@ -1,8 +1,8 @@
 #include "MusicPlayer.h"
 
-void GetFileEntry(char* Value, char* pEntry, int nEntryID)
+void GetFileEntry(char* filename, char* pEntry, int nEntryID, char* Value)
 {
-    FILE* pFile = fopen("playlist", "r");
+    FILE* pFile = fopen(filename, "r");
     char FileString[PATH_MAX];
 
     while (!feof(pFile))
@@ -20,7 +20,7 @@ void GetFileEntry(char* Value, char* pEntry, int nEntryID)
 
 void GetPlayPath(char* Path)
 {
-    GetFileEntry(Path, "Title=", 6);
+    GetFileEntry("NowPlaying", "AlbumPath=", 10, Path);
 
     char* pPos;
     pPos = strchr(Path, '\r');
@@ -28,9 +28,9 @@ void GetPlayPath(char* Path)
         *pPos = '\0';
 }
 
-void GetStop(char Stop[])
+void GetStop(char* Stop)
 {
-    GetFileEntry(Stop, "Stop=", 5);
+    GetFileEntry("MusicPlayer.config", "Stop=", 5, Stop);
 
     char* pPos;
     pPos = strchr(Stop, '\r');

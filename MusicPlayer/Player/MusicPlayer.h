@@ -20,7 +20,7 @@ void FillVorbisInfo(struct TrackInfo trackArray[30], char* path, int total);
 void BubbleSortTracks(struct TrackInfo trackArray[30], int total);
 void PatWatchDog(char* Path);
 void PlayAlbum(char* Path);
-void GetFileEntry(char* Value, char* pEntry, int nEntryID);
+void GetFileEntry(char* filename, char* pEntry, int nEntryID, char* Value);
 void GetPlayPath(char* Path);
 void GetStop(char* Stop);
 void HexDump (const char* desc, const void* addr, const int len); 

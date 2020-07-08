@@ -7,8 +7,8 @@ $Connection = mysqli_connect("localhost", "root", "root","Albums");
 if (!$Connection) 
   die("Connection failed: ".mysqli_connect_error());
 
-$Tier   = intval($_GET["tier_arg"]);   
-$sql    = "SELECT Artist,Path,Title FROM Albums WHERE Tier >= $Tier ORDER BY Artist"; 
+$subStr = $_GET["substring_arg"];   
+$sql    = "SELECT Artist,Path,Title FROM Albums WHERE Artist LIKE '$subStr%' ORDER BY Artist"; 
 
 $result = $Connection->query($sql);
 

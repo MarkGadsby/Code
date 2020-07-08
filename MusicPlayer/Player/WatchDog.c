@@ -11,7 +11,7 @@ void PatWatchDog(char TitleToPlay[PATH_MAX])
     if (inotifyFd == -1)
         printf("inotify_init");
 
-    int wd = inotify_add_watch(inotifyFd, "playlist", IN_CLOSE_WRITE);
+    int wd = inotify_add_watch(inotifyFd, "NowPlaying", IN_CLOSE_WRITE);
 
     printf("The watchdog is watching\n");
 
