@@ -15,7 +15,7 @@
             if ($_GET['arg_1'] == "AlbumPath")
             {
                 $decodedArg = urldecode($_GET["arg_2"]);
-                $albumpath = $explodedLine[0]."=".$decodedArg."\r\n";
+                $albumpath = $explodedLine[0]."=".$decodedArg;
             }
         }
     } 

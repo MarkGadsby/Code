@@ -1,8 +1,6 @@
 plainText = input("Enter your text:\n")
 shift = int(input("Enter how many places to shift:\n"))
 
-print(type(shift))
-
 cipherText = ""
 
 for char in plainText:

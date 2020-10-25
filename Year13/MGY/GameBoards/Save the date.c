@@ -1,3 +1,6 @@
+// To complie the exe file:
+// gcc -o SaveTheDate "Save the data.c"
+
 #include <stdio.h>
 
 char marks_calendar[5][6] = {
