@@ -21,12 +21,12 @@
 
 #include <unistd.h>
 
-const int MAX_ALBUM_TRACKS = 64;
-
 int main(int argc, char *argv[])
 {
     char PlayPath[PATH_MAX];
     memset(PlayPath, 0, PATH_MAX);
+
+    printf("%s %d\n", argv[1], argc);
 
     if (argc == 2)
         strcpy(PlayPath, argv[1]);
@@ -46,14 +46,17 @@ int main(int argc, char *argv[])
 
 void PlayAlbum(char* PlayPath)
 {
-    // HexDump ("PlayPath", PlayPath, 64);
+    HexDump ("PlayPath", PlayPath, MAX_ALBUM_TRACKS);
     struct TrackInfo trackArray[MAX_ALBUM_TRACKS]; // Allocate track info
     memset(trackArray, 0, MAX_ALBUM_TRACKS * sizeof(struct TrackInfo));
 
     int ArrayTotal = 0;
     FillTrackFile(trackArray, PlayPath, &ArrayTotal);
+    PrintArray(trackArray);
     FillVorbisInfo(trackArray, PlayPath, ArrayTotal);
+    PrintArray(trackArray);
     BubbleSortTracks(trackArray, ArrayTotal);
+    PrintArray(trackArray);
 
     snd_pcm_t* pcmHandle = NULL;        // PCM handle
 
@@ -97,7 +100,7 @@ void PlayAlbum(char* PlayPath)
     snd_pcm_close(pcmHandle);   // close PCM handle 
 }
 
-void FillTrackFile(struct TrackInfo trackArray[30], const char path[PATH_MAX], int* pArrayTotal)
+void FillTrackFile(struct TrackInfo trackArray[MAX_ALBUM_TRACKS], const char path[PATH_MAX], int* pArrayTotal)
 {
     DIR*            dir;
     struct dirent*  ent;
@@ -115,7 +118,7 @@ void FillTrackFile(struct TrackInfo trackArray[30], const char path[PATH_MAX], i
     }
 }
 
-void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
+void BubbleSortTracks(struct TrackInfo trackArray[MAX_ALBUM_TRACKS], int total)
 {
     bool bSwitches = true;
     struct TrackInfo holdingPen;
@@ -139,6 +142,7 @@ void BubbleSortTracks(struct TrackInfo trackArray[30], int total)
 
 void HexDump (const char * desc, const void * addr, const int len) 
 {
+    #ifdef DEBUG_OUT
     int i;
     unsigned char buff[17];
     const unsigned char * pc = (const unsigned char *)addr;
@@ -192,4 +196,15 @@ void HexDump (const char * desc, const void * addr, const int len)
 
     // And print the final ASCII buffer.
     printf ("  %s\n", buff);
+    #endif
+}
+
+void PrintArray(struct TrackInfo trackArray[MAX_ALBUM_TRACKS])
+{
+    #ifdef DEBUG_OUT
+    for(int i = 0; i < MAX_ALBUM_TRACKS; i++)
+    {
+        printf("%s\n", trackArray[i].FileName);
+    }
+    #endif
 }
