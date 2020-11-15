@@ -11,6 +11,9 @@ int queue[MAX_QUEUE_SIZE];
 int front;
 int back;
 
+// And new varible for queue length
+int queue_len;
+
 //==========================================
 // Initialise the queue to all zeros
 // Initialise the queue markers to zero
@@ -24,6 +27,7 @@ void Initialise()
 
     front = 0;
     back = 0;
+    queue_len = 0;
 }
 
 //==========================================
@@ -43,11 +47,11 @@ void ShowYourself()
 
 //==========================================
 // Checks if the queue is full by comparing
-// the back marker and the max queue size.
+// the queue length with the max queue size.
 //==========================================
 bool isFull()
 {
-    if (back == MAX_QUEUE_SIZE)
+    if (queue_len == MAX_QUEUE_SIZE)
     {
         return true;
     }
@@ -70,16 +74,18 @@ void enQueue(int new_value)
     else
     {
         queue[back] = new_value;
-        back++;    }
+        back = (back + 1) % MAX_QUEUE_SIZE;    
+        queue_len++;
+    }
 }
 
 //==========================================
-// Checks if the queue is empty by comparing 
-// the front and back markers.
+// Checks if the queue is empty by comparing  
+// the queue length with zero.
 //==========================================
 bool isEmpty()
 {
-    if (front == back)
+    if (queue_len == 0)
     {
         return true;
     }
@@ -105,7 +111,8 @@ int deQueue()
     {
         return_value = queue[front];
         queue[front] = 0;
-        front++;
+        front = (front + 1) % MAX_QUEUE_SIZE; 
+        queue_len--;   
         return return_value;
     }
 }
