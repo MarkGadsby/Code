@@ -11,7 +11,7 @@ int queue[MAX_QUEUE_SIZE];
 int front;
 int back;
 
-// And new varible for queue length
+// Declare a varible for queue length
 int queue_len;
 
 //==========================================
