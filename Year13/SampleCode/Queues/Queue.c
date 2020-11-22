@@ -63,7 +63,7 @@ bool isFull()
 
 //==========================================
 // Adds a new item to the end of the queue. 
-// Increments the back marker
+// Increments the back marker and queue length.
 //==========================================
 void enQueue(int new_value)
 {
@@ -96,7 +96,8 @@ bool isEmpty()
 }
 
 //==========================================
-// Removes the item from the front of the queue. 
+// Removes and returns the item from the front
+// of the queue. 
 // Increments the front marker.
 //==========================================
 int deQueue()
