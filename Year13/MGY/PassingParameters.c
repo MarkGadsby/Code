@@ -1,18 +1,22 @@
 #include<stdio.h>
 
-void mult(int* pNumOne, int numTwo)
+void mult(int* pNumOne)
 {
-    *pNumOne = *pNumOne * numTwo; 
+    *pNumOne = *pNumOne * 8; 
 }
 
 void main()
 {
+    int UserNum = 0;
+
+    
     // Declaration and Assignment of interger named UserNum
-    int UserNum = 9;
+    printf("please enter the number you would like to times by 8: ");
 
-    int Mult = 3;
-
-    mult(&UserNum,Mult);
+    scanf("%i", &UserNum);
+    
+     
+    mult(&UserNum);
 
     printf("The number now is = %i\n", UserNum);     
 }
