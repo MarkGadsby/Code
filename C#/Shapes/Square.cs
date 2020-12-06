@@ -1,6 +1,6 @@
 namespace Shapes
 {
-    public class Square
+    public class Square : Shape
     {
         // private member variables
         private double lenSides;
@@ -13,7 +13,7 @@ namespace Shapes
 
         // Function called getArea that will return the 
         // area of the shape is a floating point number
-        public double getArea()
+        public override double getArea()
         {
             return lenSides * lenSides;  
         }
