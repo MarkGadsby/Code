@@ -4,7 +4,7 @@ namespace Shapes
 {
     public class Circle
     {
-        private double radius;
+        private double  radius;
         
         public Circle(double given_radius)
         {
