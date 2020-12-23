@@ -1,0 +1,6 @@
+namespace Animalopoly
+{
+    class Dice 
+    {
+    }
+}
