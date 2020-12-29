@@ -7,6 +7,6 @@ namespace Animalopoly
     }
     class Tile 
     {
-        protected TileType type;
+        public TileType type;
     }
 }
