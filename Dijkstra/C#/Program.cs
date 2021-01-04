@@ -10,13 +10,15 @@ namespace Dijkstra
             int[,] graph = new int[,] 
             {
                 { 0, 7, 0, 3, 0 }, 
-                { 7, 0, 3, 2, 6 }, 
-                { 0, 3, 0, 4, 1 }, 
+                { 7, 0, 9, 2, 6 }, 
+                { 0, 9, 0, 4, 1 }, 
                 { 3, 2, 4, 0, 7 }, 
                 { 0, 6, 1, 7, 0 } 
             }; 
 
             DijkstraTools ToolKit = new DijkstraTools(); 
+            Console.Write("\n\nWelcome to the world of Dijkstra: The source vertex is 'a'\n\n"); 
+
             ToolKit.Dijkstra(graph, 0); 
         }
     }
@@ -46,14 +48,30 @@ namespace Dijkstra
         } 
     
         // A utility function to print the constructed distance array 
-        void PrintSolution(int[] distance) 
+        void PrintSolution(int[] distance, int[] parent) 
         { 
-            Console.Write("Vertex \t\t Distance from Source\n"); 
+            Console.Write("Vertex\tDistance \\ Path from Source\n"); 
             
             for (int v = 0; v < VERTICES_COUNT; v++)
             {
-                Console.Write(Convert.ToChar(v+97) + " \t\t " + distance[v] + "\n"); 
+                Console.Write(Convert.ToChar(v+97) + "\t" + distance[v] + "\t"); 
+                PrintPath(parent, v); 
+                Console.WriteLine();
             } 
+        } 
+
+        void PrintPath(int[] parent, int i) 
+         { 
+            // Base Case : If i is source 
+            if (parent[i] == - 1) 
+            {
+                Console.Write("   " + Convert.ToChar(i+97) + " "); 
+                return; 
+            }
+            
+            PrintPath(parent, parent[i]); 
+            
+            Console.Write(Convert.ToChar(i+97)+ " "); 
         } 
     
         // Funtion that implements Dijkstra's single source shortest path algorithm 
@@ -62,6 +80,9 @@ namespace Dijkstra
         { 
             // The output array. distance[v] will hold the shortest distance from src to source 
             int[] distance = new int[VERTICES_COUNT];   
+
+            // Parent array to store shortest path tree 
+            int[] parent = new int[VERTICES_COUNT]; 
 
             // shortest_path_tree[v] will true if vertex v is included in shortest path 
             // tree or shortest distance from source to v is finalized 
@@ -72,13 +93,14 @@ namespace Dijkstra
             { 
                 distance[v] = int.MaxValue; 
                 shortest_path_tree[v] = false; 
+                parent[0] = -1; 
             } 
     
             // Distance of source vertex from itself is always 0 
             distance[source] = 0; 
     
             // Find shortest path for all vertices 
-            for (int count = 0; count < VERTICES_COUNT; count++) 
+            for (int count = 0; count < VERTICES_COUNT - 1; count++) 
             { 
                 // Pick the minimum distance vertex from the set of vertices not yet 
                 // processed. u is always equal to source in first iteration. 
@@ -95,15 +117,15 @@ namespace Dijkstra
                     // smaller than current value of distance[v]                     
                     if (!shortest_path_tree[v] && 
                         graph[u, v] != 0 && 
-                        distance[u] != int.MaxValue && 
                         distance[u] + graph[u, v] < distance[v]) 
                         {
+                            parent[v] = u; 
                             distance[v] = distance[u] + graph[u, v]; 
                         }
                 }
             } 
             // print the constructed distance array 
-            PrintSolution(distance); 
+            PrintSolution(distance, parent); 
         } 
     }
 }

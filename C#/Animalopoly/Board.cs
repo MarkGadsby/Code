@@ -189,7 +189,7 @@ namespace Animalopoly
 
                 Console.WriteLine(players[turn].GetName() + " you have: £"  + players[turn].GetWealth());
                 
-                switch (space.type)
+                switch (space.get_type())
                 {
                     case TileType.ANIMAL:
                     {
