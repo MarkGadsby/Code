@@ -17,7 +17,7 @@ namespace Shapes
         
         // Heron's Formula for the area of a triangle(Hero's Formula)
         // A method for calculating the area of a triangle when you know the lengths of all three sides.
-        public override double getArea()
+        public override double get_area()
         {
             double perimeter = sideOne + sideTwo + sideThree;
             double halfP = perimeter / 2;

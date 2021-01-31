@@ -13,7 +13,7 @@ namespace Shapes
 
         // Function called getArea that will return the 
         // area of the shape is a floating point number
-        public override double getArea()
+        public override double get_area()
         {
             return lenSides * lenSides;  
         }
