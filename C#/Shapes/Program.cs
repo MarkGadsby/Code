@@ -6,14 +6,17 @@ namespace Shapes
     {
         static void Main(string[] args)
         {
-            Square square = new Square(5);
-            Console.WriteLine(square.getArea());
+            Shape[] shapes = new Shape[4];
 
-            Circle circle = new Circle(32.56);
-            Console.WriteLine(circle.getArea());
+            shapes[0] = new Square(10);           
+            shapes[1] = new Circle(10);           
+            shapes[2] = new Triangle(10,10,10);           
+            shapes[3] = new Hexagon(10);
 
-            Triangle triangle = new Triangle(10,10,10);
-            Console.WriteLine(triangle.getArea());
+            for (int i = 0; i < shapes.Length; i++)
+            {
+                Console.WriteLine(shapes[i].get_area());        
+            }            
         }
     }
 }

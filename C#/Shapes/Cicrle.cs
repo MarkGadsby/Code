@@ -2,7 +2,8 @@ using System;
 
 namespace Shapes
 {
-    public class Circle
+    public class Circle : Shape
+
     {
         private double radius;
         
@@ -11,7 +12,7 @@ namespace Shapes
             radius = given_radius;
         }
         
-        public double getArea()
+        public override double get_area()
         {
             return Math.PI * radius * radius; 
         }

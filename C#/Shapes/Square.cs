@@ -1,15 +1,19 @@
 namespace Shapes
 {
-    public class Square
+    public class Square : Shape
     {
-        private int lenSides;
+        // private member variables
+        private double lenSides;
 
-        public Square(int given_lenSides)
+        // This is the constructor for the Square class
+        public Square(double given_lenSides)
         {
             lenSides = given_lenSides;
         }
 
-        public int getArea()
+        // Function called getArea that will return the 
+        // area of the shape is a floating point number
+        public override double get_area()
         {
             return lenSides * lenSides;  
         }

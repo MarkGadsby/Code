@@ -1,0 +1,16 @@
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly.deps.json
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly.runtimeconfig.json
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly.runtimeconfig.dev.json
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly.dll
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/ref/Animalopoly.dll
+/home/ubuntu/Code/C#/Animalopoly/bin/Debug/net5.0/Animalopoly.pdb
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.csprojAssemblyReference.cache
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.AssemblyInfoInputs.cache
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.AssemblyInfo.cs
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.csproj.CoreCompileInputs.cache
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.dll
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/ref/Animalopoly.dll
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.pdb
+/home/ubuntu/Code/C#/Animalopoly/obj/Debug/net5.0/Animalopoly.genruntimeconfig.cache
