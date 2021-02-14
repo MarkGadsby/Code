@@ -3,7 +3,6 @@ using System;
 namespace Shapes
 {
     public class Circle : Shape
-
     {
         private double radius;
         

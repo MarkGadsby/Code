@@ -1,4 +1,4 @@
-final int COLS = 6;
+final int COLS = 6; //<>//
 final int ROWS = 6;
 final int COLOURSETS = 2;
 
@@ -11,7 +11,7 @@ int colSetSwitch;
 
 void setup() 
 {
-  size(700, 600);
+  size(600, 600);
   
   frameRate(2);
 
@@ -51,5 +51,4 @@ void draw()
       }
     }
   }
-
 }
