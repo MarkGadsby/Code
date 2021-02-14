@@ -1,0 +1,16 @@
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#.deps.json
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#.runtimeconfig.json
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#.runtimeconfig.dev.json
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#.dll
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/ref/C#.dll
+/home/ubuntu/Code/Year13/Max/C#/bin/Debug/net5.0/C#.pdb
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.csprojAssemblyReference.cache
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.AssemblyInfoInputs.cache
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.AssemblyInfo.cs
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.csproj.CoreCompileInputs.cache
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.dll
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/ref/C#.dll
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.pdb
+/home/ubuntu/Code/Year13/Max/C#/obj/Debug/net5.0/C#.genruntimeconfig.cache

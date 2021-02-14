@@ -1,0 +1,13 @@
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart.deps.json
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart.runtimeconfig.json
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart.runtimeconfig.dev.json
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart.dll
+/home/ubuntu/Code/C#Projects/TestStart/bin/Debug/netcoreapp3.1/TestStart.pdb
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.csprojAssemblyReference.cache
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.AssemblyInfoInputs.cache
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.AssemblyInfo.cs
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.csproj.CoreCompileInputs.cache
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.dll
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.pdb
+/home/ubuntu/Code/C#Projects/TestStart/obj/Debug/netcoreapp3.1/TestStart.genruntimeconfig.cache
