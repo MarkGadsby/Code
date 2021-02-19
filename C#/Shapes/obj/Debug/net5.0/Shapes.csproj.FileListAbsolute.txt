@@ -1,0 +1,16 @@
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes.deps.json
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes.runtimeconfig.json
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes.runtimeconfig.dev.json
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes.dll
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/ref/Shapes.dll
+/home/mark/Repos/Github/Code/C#/Shapes/bin/Debug/net5.0/Shapes.pdb
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.csprojAssemblyReference.cache
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.GeneratedMSBuildEditorConfig.editorconfig
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.AssemblyInfoInputs.cache
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.AssemblyInfo.cs
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.csproj.CoreCompileInputs.cache
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.dll
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/ref/Shapes.dll
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.pdb
+/home/mark/Repos/Github/Code/C#/Shapes/obj/Debug/net5.0/Shapes.genruntimeconfig.cache

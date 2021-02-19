@@ -1,0 +1,13 @@
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart.deps.json
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart.runtimeconfig.json
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart.runtimeconfig.dev.json
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart.dll
+/home/mark/Repos/Github/Code/C#/Robots/bin/Debug/netcoreapp3.1/TestStart.pdb
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.csprojAssemblyReference.cache
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.AssemblyInfoInputs.cache
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.AssemblyInfo.cs
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.csproj.CoreCompileInputs.cache
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.dll
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.pdb
+/home/mark/Repos/Github/Code/C#/Robots/obj/Debug/netcoreapp3.1/TestStart.genruntimeconfig.cache

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ne0LVaePfNF1oNf5ZLQDY+O6oOn9QetyCVLO8a0Bal6KDGy17vr0fJ+UmjBUNgAqNH7ZvnKyFhVHeKWvHxPYBg==",
+  "success": true,
+  "projectFilePath": "/home/mark/Repos/Github/Code/C#/Robots/TestStart.csproj",
+  "expectedPackageFiles": [
+    "/home/mark/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/home/mark/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.12/microsoft.netcore.app.host.linux-x64.3.1.12.nupkg.sha512"
+  ],
+  "logs": []
+}

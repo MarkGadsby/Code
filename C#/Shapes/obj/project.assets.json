@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mark/Repos/Github/Code/C#/Animalopoly/Animalopoly.csproj",
-      "projectName": "Animalopoly",
-      "projectPath": "/home/mark/Repos/Github/Code/C#/Animalopoly/Animalopoly.csproj",
+      "projectUniqueName": "/home/mark/Repos/Github/Code/C#/Shapes/Shapes.csproj",
+      "projectName": "Shapes",
+      "projectPath": "/home/mark/Repos/Github/Code/C#/Shapes/Shapes.csproj",
       "packagesPath": "/home/mark/.nuget/packages/",
-      "outputPath": "/home/mark/Repos/Github/Code/C#/Animalopoly/obj/",
+      "outputPath": "/home/mark/Repos/Github/Code/C#/Shapes/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mark/.nuget/NuGet/NuGet.Config"
